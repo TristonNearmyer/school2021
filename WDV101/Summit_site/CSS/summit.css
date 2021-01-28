@@ -1,0 +1,125 @@
+/* this css styles the text in this web site*/
+
+body {
+background-color:#1FADAD;}
+
+@import url('https://fonts.googleapis.com/css?family=Titan+One');
+
+@font-face {
+    font-family: 'acmeregular';
+    src: url('../Fonts/Acme-Regular-webfont.eot');
+    src: url('../Fonts/Acme-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../Fonts/Acme-Regular-webfont.woff2') format('woff2'),
+         url('../Fonts/Acme-Regular-webfont.woff') format('woff'),
+         url('../Fonts/Acme-Regular-webfont.ttf') format('truetype'),
+         url('../Fonts/Acme-Regular-webfont.svg#acmeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p{
+	line-height:200%
+}
+
+h1,h2{
+	font-family: 'Titan One', cursive;
+	
+	background-color:#178282;
+	text-align:center;
+	text-decoration:overline underline;
+	
+	margin:24px 0px;
+	line-height:200%;
+}
+
+h3{
+	text-align:center;
+}
+
+h1.special{
+	background-color:#1FADAD;
+	font-family: 'Titan One', cursive;
+	text-align:center;
+	text-decoration: underline;
+}
+
+
+.center{
+	display:block;
+	margin:0 auto;
+}
+
+
+img{
+	border:2px solid black;
+	padding: 6px;
+	background-color:white;
+	margin-left: 24px;
+}
+
+img.floatright{
+	float: right;
+	margin-left:30px;
+}
+
+
+img.floatleft{
+	float: left;
+	margin-right:50px;
+	margin-bottom:0px
+}
+
+
+img.floatcenter{
+	float:center;
+	margin:0px 10px;
+}
+
+a:link{
+	color:white;
+}
+
+a:visited{
+	color:blue;
+	}
+	
+	
+nav {
+	background-color:black;
+	line-height:200%;
+	border-left:12px solid blue;
+}
+
+nav a:link{
+	color:white;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+nav a:visited {
+	color: blue;
+	font-weight:bold;
+	text-decoration:none;
+}
+nav li{
+	display:inline;
+	list-style-type:none;
+	padding-right:48px;
+}
+
+nav a:hover{
+	color: white;
+	background-color:black;
+	padding:7px 8px;
+}
+
+p.special{
+	
+	margin-left:0px;
+	text-align:right;
+}
+
+h2.special{
+	margin-top:50px;
+}
+

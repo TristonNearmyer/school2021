@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Flexbox Example</title>
+
+<!-- 
+Use this file to create a gallery with flexbox.
+  -->
+
+<style>
+
+* {
+    box-sizing: border-box;
+	 
+	
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica", Arial, sans-serif;
+}
+
+#container {
+  background-color:lightgray;
+  padding: 10px;
+  width:90%;
+  margin: 20px auto;
+  border:2px solid black;
+  border-radius:25px;
+ 
+}
+
+.flex-container{
+	display:flex;
+	flex-wrap:wrap;
+	margin:20px auto;
+	justify-content:center;
+	
+}
+
+header {
+    text-align: center;
+    padding: 25px;
+    }
+    
+figcaption{
+	font-style:italic;
+	margin-bottom:15px;
+	text-align:center;
+	margin:5px;
+}
+
+figure{
+	border:2px solid purple;
+	padding:25px;
+	background-color:lightpink;
+	width:285px;
+	text-align:center;
+	border-radius:25px;
+	
+}
+
+figure img{
+	display:block;
+	margin:0 auto;
+}
+</style>
+
+</style>
+</head>
+
+<body>
+<h1><center>Types of Roses</center></h1>
+<div id="container">
+<div class="flex-container">
+
+<figure>
+	<h3>Grandiflora Roses</h3>
+	<img src="images/grandiflora_stripped.jpg" alt="Stripped Rose">
+	<figcaption>
+		<p>Grandiflora Stripped Rose</p>
+	</figcaption>
+<p>Grandiflora roses are a class that was created in the last century to classify crosses between Hybrid Tea and Floribunda roses that fit neither category. They are a combination of the graceful blooms of the Hybrid Teas and the repetitive growth cycle of Floribundas. <p>
+</figure>  
+ 
+<figure> 
+	<h3>English/David Austin Roses</h3>
+	<img src="images/da_english_pink.jpg" alt="DA pink Rose">
+	<figcaption>
+		<p>DA English Pink Rose<p>
+	</figcaption>
+	<p>Although not officially recognized as a separate class, David Austin—sometimes called English—roses are highly popular among consumers and retailers. David Austin started breeding roses over 50 years ago with the goal of creating a new group of roses that featured the best characteristics of both Old and Modern Roses.</p>
+</figure> 
+
+<figure>
+	<h3>Hybrid Tea Roses</h3>
+	<img src="images/hybrid_orange.jpg" alt="orange Rose">
+	<figcaption>
+		<p>Hybrid Tea Orange Rose<p>
+	</figcaption>
+	<p>Hybrid Tea roses have been the favorite of the Modern Roses, and come in a very diverse range of colors. They are known for their long, upright stems, which make them an extremely popular cut flower.</p>
+</figure>
+
+<figure>
+	<h3>Miniature Roses</h3>
+	<img src="images/mini_rose_yellow.jpg" alt="mini yellow Rose">
+	<figcaption>
+		<p>Miniature Yellow Rose<p>
+	</figcaption>
+	<p>Miniature roses are miniature versions of Hybrid Tea roses. They have petite stems, leaves and flowers, and are hardy and versatile plants. Miniatures come in a wide range of colors including pink, orange, white, and yellow.</p>
+</figure>
+
+<figure>
+	<h3>Groundcover Roses</h3>
+	<img src="images/groundcover.jpg" alt="multi-color roses">
+	<figcaption>
+		<p>Multi-colored Groundcover Roses<p>
+	</figcaption>
+	<p>Also known as &ldquo; landscape&rdquo; roses, this type of rose was developed to fulfill the desire for a garden rose that offers color, form, and fragrance, but is also easy to care for.</p>
+</figure>
+</div><!--close flex-container-->
+</div><!--close container-->
+</body>
+</html>

@@ -1,0 +1,136 @@
+/* This css file is for the structure of the pages*/
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+#container{
+	width:80%;
+	margin:10px auto;
+	background-color:green;
+	border:2px solid black;
+	border-radius:25px;
+	box-shadow:5px 5px 5px rgba(0,0,0,.5)
+	
+}
+
+header{
+	text-align:center;
+	background-color:green;
+	border-top-left-radius:25px;
+	border-top-right-radius:25px;
+}
+
+header img{
+	display:block;
+	margin:0 auto;
+	border:hidden;
+	padding:0;
+	border-top-left-radius:25px;
+	border-top-right-radius:25px;
+	width:100%;
+}
+
+nav {
+	background-color:black;
+	line-height:200%;
+	padding:10px;
+	text-align:center;
+}
+
+main{
+	padding:15px;
+	background-color:lightblue;
+}
+
+footer{
+	color:white;
+	background-color:black;
+	text-align:center;
+	border-bottom-left-radius:25px;
+	border-bottom-right-radius:25px;
+}
+
+.grid-container2{
+	display:grid;
+	grid-template-areas:
+		'header header header header header header'
+		'nav nav nav nav nav nav'
+		'left main main main main main'
+		'footer footer footer footer footer footer';
+	width:80%;
+	border:2px solid black;
+	margin: 10px auto;
+	background-color:green;
+	//grid-gap:10px;
+	//padding:0;
+	border-radius:25px;
+}
+
+img.header{
+	display:block;
+	width: 100%;
+	margin:0 auto;
+	border:hidden;
+	padding:0;
+	border-top-left-radius:25px;
+	border-top-right-radius:25px;
+}
+
+.item1 {
+	grid-area:header;
+	padding:0px;
+	
+	
+}
+
+.item2 {
+	grid-area:nav;
+	text-align:center;
+	background-color:black;
+	
+} 
+
+.item3{
+	text-align:center;
+	padding:10px;
+	grid-area:left;
+	background-color:yellow;
+	color:black;
+	border-right:1px solid black;
+	font-size:1.0em;
+}
+
+.item4{
+	grid-area:main;
+	text-align:center;
+	padding:10px;
+	font-size:1.5em;
+	background-color:lightblue;
+	color:black;
+}
+
+.item5{
+	grid-area:footer;
+	text-align:center;
+	padding:10px;
+	border-bottom-left-radius:25px;
+	border-bottom-right-radius:25px;
+	background-color:black;
+	color:white;
+	
+}
+
+img.banner{
+	display:block;
+	width:100%;
+	height:auto;
+	margin:0 auto;
+	padding:0px;
+	border:hidden;
+	border-top-left-radius:25px;
+	border-top-right-radius:25px;
+	box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+}

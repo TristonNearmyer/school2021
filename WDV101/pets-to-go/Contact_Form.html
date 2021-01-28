@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Contact Me Form</title>
+
+<style>
+
+*{
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+	}
+
+body{
+	font-family:"Helvetica",Ariel,sans-serif;
+	font-size:125%;
+	color:#333;
+	background-color:#9bd;
+	}
+	
+#formcontainer{
+	background-color:lightgray;
+	width:800px;
+	margin:10px auto;
+	padding:20px;
+	border:2px solid black;
+	border-radius:15px;
+	}
+	
+legend{
+	width:100%;
+	border-bottom:1px dotted purple;
+	padding-bottom:5px;
+	margin-bottom:15px:
+	font-size:1.3em;
+	}
+	
+fieldset1{
+	width:25em;
+	margin:20px;
+	}
+
+fieldset1 div{
+	margin:5px 0;
+	display:flex;
+	align-items:center;
+	}
+	
+input, textarea, select{
+	font-size:1.1em;
+	padding:2px 5px 4px;
+	border-radius:5px;
+	margin-top:5px;
+	order:2;
+	flex:1 1 auto;
+	}
+	
+label{
+	order:1;
+	width:10em;
+	text-align:right;
+	padding-right:0.5em;
+	}
+	
+fieldset2{
+	width:25em;
+	margin:20px;
+	}
+
+fieldset2 div{
+	margin:5px 0;
+	display:flex;
+	align-items:top;
+	}
+	
+input[type=submit], input[type=reset]{
+	color:white;
+	background-color:black;
+	border-radius:50px;
+	padding:6px;
+	width:50px;
+	margin:25px;
+	}
+
+</style>
+
+</head>
+<body>
+<div id="formcontainer">
+<form id="contact_form" method ="post" action="contact_form_response.php">
+	<legend>Contact Me!</legend>
+		<p style="font-style:italic;">Send us a message. We would love to hear from you</p>
+	
+	<fieldset1>
+		<div>
+			<label for="firstname">First Name</label>
+			<input id="firstname" name="firstname" type="text">
+		</div>
+		
+		<div>
+			<label for="lastname">Last Name</label>
+			<input id="lastname" name="lastname" type="text">
+		</div>
+		
+		<div>
+			<label for="email">Email Address</label>
+			<input id="email" name="email" type="text" placeholder="name@anywhere.com">
+		</div>
+		<div>
+			<label for="topic">Topic</label>
+			<select id="topic" name="topic">
+				<option value="web"> Adoption</option>
+				<option value="resume"> Volunteering</option>
+				<option value="resume">SPAY/NEUTER CLINIC</option>
+				<option value="resume">ANIMAL RESCUE</option>
+				<option value="other">REHABILITATION</option>
+			</select>
+			
+		</div>
+	</fieldset1>
+	
+	<fieldset2>
+		<div>
+			<label for="message"> Message</label>
+			<textarea id="message" name="message" rows="10" cols="45"></textarea>
+		</div>
+		
+		<div>
+			<input type="submit" id="button" name="button" value="Submit">
+			<input type="reset" id="button" name="button" value="Reset">
+		</div>
+	</fieldset2>
+
+</div><!--close formcontainer-->
+</body>
+
+</html>
