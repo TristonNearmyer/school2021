@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Easter Advertisement</title>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+		/* GRASS WILL POP UP FIRST, EGG TOP AND BOTTOM WILL SLIDE DOWN FROM TOP TOGETHER AND REST ON GRASS, TEXT SLIDES IN FROM LEFT, EGG SHAKES, CRACKS, AND CANDY POPS UP*/
+
+        .advertContainer {
+
+         	width:240px;
+
+            height:400px;
+
+            background-color: rgba(34, 169, 255, 1);
+
+            position: relative;
+				
+			background-image: url("grass-02.png");
+				
+			background-repeat: no-repeat;
+				
+			background-position: center bottom;
+				
+			z-index: -1;
+				
+			animation: slideUp 5s;
+				
+			animation-fill-mode: forwards;
+				
+			overflow: hidden;
+
+
+            }
+
+ 
+
+         .adGrass {
+
+             animation:slideUp 3s;
+				
+				
+            }
+
+    
+
+          .eggTop {
+			  
+			  opacity: 0;
+			  
+			  z-index: 1;
+			  
+			  animation: slideDown 3s, eggCrack 1s;
+			  
+			  animation-delay: 2s, 8.25s;
+			  
+			  animation-fill-mode: forwards;
+			  
+			  animation-timing-function: linear;
+				
+			
+				 
+				
+				
+
+            }
+
+            
+
+            .eggBottom {
+				
+				opacity: 0;
+				
+				position:relative;
+				
+				z-index: -1;
+				
+				animation: slideDownBottom 3s;
+				
+				animation-delay: 2s;
+				
+				animation-fill-mode: forwards;
+				
+				animation-timing-function: linear;
+
+            }
+
+            
+
+            .adText {
+				
+				opacity: 0;
+
+                padding-top:20px;
+
+                animation:slideRight 3s;
+
+                animation-delay: 4.5s;
+				
+				animation-fill-mode: forwards;
+
+            }
+
+            
+
+            .advertEgg {
+
+               	animation:slideDown 3s;
+
+               	animation-delay: 5s;
+				
+				padding-top: 60px;
+				
+				animation:eggShake .25s;
+				
+				animation-delay: 7s;
+				
+				animation-iteration-count: 5;
+				
+				
+
+            }
+
+            
+
+            
+
+            
+
+            
+
+           @keyframes slideUp {
+
+               from {
+				   transform: translateY(200%);
+			   }
+
+               to{
+				   transform: translateY(0%);
+			   }
+
+            }
+
+            
+
+            @keyframes slideDown {
+
+               from {
+				   
+				   opacity: 1;
+				   
+				   transform: translateY(-800%);
+				}
+
+               to{
+				   opacity: 1;
+				   
+				   transform: translateY(0%);
+				}
+
+            }
+
+           @keyframes slideDownBottom {
+
+               from {
+				
+				   opacity: 1;
+				   
+				   transform: translateY(-800%);
+				}
+
+               to{
+				  
+				   opacity: 1;
+				   
+				   transform: translateY(-65%);
+				}
+
+            }
+
+            @keyframes slideRight {
+
+               from {
+				   
+				   opacity: 1;
+				   
+				   transform: translateX(-100%);
+				}
+				
+				
+
+               to{
+				   
+				   opacity: 1;
+				   
+				   transform: translateX(0%);
+				}
+
+            }
+
+            @keyframes eggShake {
+
+                0%{transform: translateX(0%)}
+
+                25%{transform: translateX(2%)}
+
+                50%{transform: translateX(-2%)}
+
+                75%{transform: translateX(2%)}
+
+                100%{transform: translateX(0%)}
+
+            }
+
+            @keyframes eggCrack {
+
+                 0% { 
+					 opacity: 1;
+     				 transform: rotate(0); 
+					 transform-origin: 170px 80px;
+      
+   					}
+  
+			   100% { 
+				   opacity: 1;
+				 	 transform: rotateZ(90deg); 
+				   	 transform-origin: 170px 80px;
+
+			 		  } 
+						}
+
+			@media only screen and (max-width: 960px){
+				
+			.advertContainer {
+					
+				margin: auto;
+
+                width:250px;
+
+                height:250px;
+
+				}
+				
+			.advertEgg img{
+				
+				margin: auto;
+					
+				width: 70%;
+					
+				padding-left: 30%;
+				
+				}
+				
+				
+            .advertEgg {
+				
+				margin-top: -64px;
+				
+				padding-top: 0px;
+			
+           		}
+				
+			.adText {
+				padding-top: 0px;
+				
+				}
+				
+
+				
+				
+			@keyframes eggCrack {
+
+                 0% { 
+					 
+					opacity: 1;
+					 
+     				transform: rotate(0); 
+					 
+					transform-origin: 200px 56px;
+      
+   					}
+  
+			   100% { 
+				   
+				   	opacity: 1;
+				   
+				 	transform: rotateZ(180deg); 
+				   
+				   	transform-origin: 200px 56px;
+
+			 		  } 
+				
+					}
+				
+			@keyframes slideDown {
+
+               from {
+				   
+				   opacity: 1;
+				   
+				   transform: translateY(-800%);
+				}
+
+               to{
+				   opacity: 1;
+				   
+				   transform: translateY(25%);
+				}
+
+            }
+
+             @keyframes slideDownBottom {
+
+               from {
+				
+				   opacity: 1;
+				   
+				   transform: translateY(-800%);
+				}
+
+               to{
+				  
+				   opacity: 1;
+				   
+				   transform: translateY(-40%);
+				}
+
+            }
+				
+
+			}
+
+    </style> 
+
+	</head>
+
+    <body>
+
+        <div class="advertContainer">
+
+            <div class="adText"><img src="text-05.png" alt="sale text"></div>
+
+            <div class="advertEgg">
+
+                <div class="eggTop"><img src="eggTop-03.png" alt="egg top"></div>
+
+                <div class="eggBottom"><img src="eggBottom-04.png" alt="egg bottom"></div>
+
+            </div>
+
+           
+
+        </div>
+
+    </body>
+
+</html>

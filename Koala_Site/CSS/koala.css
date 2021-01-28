@@ -1,0 +1,144 @@
+/* this css styles the text in this web site*/
+
+body {
+background-color:#1FADAD;}
+
+@import url('https://fonts.googleapis.com/css?family=Titan+One');
+
+@font-face {
+    font-family: 'acmeregular';
+    src: url('../Fonts/Acme-Regular-webfont.eot');
+    src: url('../Fonts/Acme-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../Fonts/Acme-Regular-webfont.woff2') format('woff2'),
+         url('../Fonts/Acme-Regular-webfont.woff') format('woff'),
+         url('../Fonts/Acme-Regular-webfont.ttf') format('truetype'),
+         url('../Fonts/Acme-Regular-webfont.svg#acmeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p {
+	
+	color:#336600;
+	
+	font-family:"Helvetica", "Arial","Verdana", sans-serif;
+	font-size: 1.2em;
+	line-height: 1.5;
+}
+
+h1{
+	font-family: 'Titan One', cursive;
+	color:#336600;
+	background-color:#178282;
+	text-align:center;
+	text-decoration:overline underline;
+	text-transform:uppercase;
+	margin:24px 0px;
+	line-height:200%;
+}
+
+h2{
+	font-family: 'acmeregular';
+}
+	
+ h3{
+	font-family: 'Titan One', cursive;
+	color:black;
+	text-align:center;
+	text-decoration:overline underline;
+	text-transform:uppercase;
+	border-top:2px solid maroon;
+	padding-top:6px;
+	padding-bottom:6px;
+	margin-top:20px;
+}
+
+body{
+		font-family:"Helvetica", "Arial","Verdana", sans-serif;
+}
+
+
+p em {
+	color:maroon;
+}
+
+
+ul, li{
+	color:blue;
+	
+	
+}
+
+.special {
+	color: purple;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+
+
+.center{
+	display:block;
+	margin:0 auto;
+}
+
+p.greenbold{
+	color:green;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+a:link{
+	color:red;
+}
+
+a:visited{
+	color:green;
+	}
+
+nav a:link{
+	color:white;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+nav a:visited {
+	color: red;
+	font-weight:bold;
+	text-decoration:none;
+}
+nav li{
+	display:inline;
+	list-style-type:none;
+	padding-right:48px;
+}
+
+nav a:hover{
+	color: yellow;
+	background-color:maroon;
+	padding:7px 8px;
+}
+
+/*the following are box model properties applied to images*/
+
+img{
+	border:2px solid black;
+	padding: 6px;
+	background-color:white;
+	margin-left: 24px;
+}
+
+img.floatright{
+	float: right;
+	margin-left:0px;
+}
+
+img.floatleft{
+	float: left;
+	margin-right:50px;
+}
+
+.clear{
+	clear:both;
+}
