@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+<meta charset="utf-8">
+<title>data visualzation</title>
+	
+	<style>
+		
+		body {
+			width: 100%;
+			height: 720px;
+		}
+	
+		#container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			height: 100%;
+		}
+		
+		.covidChart{
+			width: 45%;
+			display: flex;
+			flex-direction: column;
+		}
+		
+		.dogChart {
+			width: 45%;
+		}
+		
+		iframe {
+			width: 100%;
+			height: 100%;
+		}
+		
+		@media only screen and (max-width: 500px) {
+			
+			body{
+				height: 600;
+			}
+			
+			#container {
+				flex-direction: column;
+				justify-content: center;
+				width: 100%;
+			}
+			
+			.covidChart {
+				width: 90%;
+				height: 50%;
+			}
+			
+			.dogChart{
+				width: 90%;
+				height: 50%;
+			}
+			
+		}
+	
+	</style>
+	
+</head>
+		
+		
+<body>
+	
+	<div id="container">
+	
+	<div class="covidChart">
+		<h1> made in domo</h1>
+		
+	<iframe src="https://dmacc-edu.domo.com/embed/card/private/qxZY0"  marginheight="0" marginwidth="0" frameborder="0"></iframe>
+		</div>
+	
+	<div class="dogChart">
+	<p>dog furr color by number owned</p>
+	<iframe src="https://dmacc-edu.domo.com/embed/card/private/rk9R4"  marginheight="0" marginwidth="0" frameborder="0"></iframe>
+	</div>
+	</div>
+</body>
+</html>

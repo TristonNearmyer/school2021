@@ -1,0 +1,441 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="utf-8">
+<title>T's Recipe's</title>
+	
+	<link rel="stylesheet" href="recipeCSS.css">
+	<script src="recipeObjects.js"></script>
+	<script src="recipe.js"></script>
+	
+	
+	
+	<script> 
+		
+		function pageLoad(){
+		
+			
+			checkCookie();
+			
+			document.querySelector("#selectChili").addEventListener("click", function(){displayChiliRecipe(); pageAnimation();});
+			document.querySelector("#selectCornbread").addEventListener("click", function(){displayCornbreadRecipe(); pageAnimation();});
+			document.querySelector("#selectPecanPie").addEventListener("click", function(){displayPecanPieRecipe(); pageAnimation();});
+			document.querySelector("#selectAddUser").addEventListener("click", function(){displayAddUserRecipeForm(); pageAnimation();});
+			document.querySelector("#displayCookBook").addEventListener("click", function(){displayStore(); pageAnimation();});
+			document.querySelector("#customServingQuantity").addEventListener("change", changeServingSize);
+			document.querySelector("#addIngredient").addEventListener("click", displayUserIngredient);
+			document.querySelector("#removeIngredient").addEventListener("click", removeUserIngredient);
+			document.querySelector("#addInstructions").addEventListener("click", displayUserInstructions);
+			document.querySelector("#removeInstruction").addEventListener("click", removeUserInstructions);
+			document.querySelector("#addNotes").addEventListener("click", displayUserNotes);
+			document.querySelector("#removeNote").addEventListener("click", removeUserNotes);
+			document.querySelector("#submit_recipe").addEventListener("click", addUserRecipe);
+			document.querySelector("#resetForm").addEventListener("click", resetForm);
+			document.querySelector(".backButton").addEventListener("click", returnToNav);
+			document.querySelector("#mobileBackButton").addEventListener("click", returnToNav);			document.querySelector("#formatSelect").addEventListener("change", formatChange);
+			document.querySelector("#subSelect").addEventListener("change", subChange);
+		};
+
+	</script>
+	
+</head>
+
+<body onLoad="pageLoad()">
+	<div id="container">
+		
+		<nav>
+				<div class="navigation">
+
+					<ul id="navigation">
+
+						<div style="background-image: url('images/chili.jpg')" id="selectChili"><p>Crockpot Chili Recipe</p></div>
+						<div style="background-image: url('images/cornbread.jpg')" id="selectCornbread"><p>T's Cornbread Recipe</p></div>
+						<div style="background-image: url('images/Pecan.jpg')" id="selectPecanPie"><p>T's Pecan Pie Recipe</p></div>
+						<div style="background-image: url('images/vegetables.jpg')" id="selectAddUser"><p>Add Your own Recipe!</p></div>
+						<div style="background-image: url('images/cookbook.jpg')" id="displayCookBook"><p>Check out our Cookbooks!</p></div>
+
+					</ul>
+
+				</div>
+					
+			</nav>
+		
+		<main id="top">
+			
+			<aside>
+				
+				<div class="backButton">
+					<div class="curvedarrow"></div>
+					<p>Back to menu</p>
+				</div>
+				<br>
+				<div>
+				<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2FEatingWell&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+				
+				<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FEatingWell&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+				</div>
+				
+				<br>
+				
+				<div>
+				<a href="https://twitter.com/EatingWell?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @EatingWell</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				
+				<a class="twitter-timeline" data-height="300" href="https://twitter.com/EatingWell?ref_src=twsrc%5Etfw">Tweets by EatingWell</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				</div>
+			<!--	  -->
+				
+			</aside>
+			
+			<div id="chiliRecipe">
+				
+				<div class="image">
+					
+				</div>
+				
+				<br>
+				
+				<div class="recipe">
+					
+					<h1 class="recipeName"></h1> 
+				
+					<div class="servingSelect">
+
+						<label for="serving size">Adjust Serving: </label>
+
+						<select id="customServingQuantity" name="serving size">
+
+							<option value="double">Double</option>
+							<option value="normal" selected>Normal</option>
+							<option value="half">Half</option>
+
+						</select>
+					</div>
+
+					<p>Serves:<span id="serves"></span></p>
+					<p>Prep Time:<span id="prepTime"></span></p>
+					<p>Cook time:<span id="cookTime"></span></p>
+					<h2>ingredients:</h2>
+					<ul id="ingredients">Ingredients:</ul>
+					<h2>instructions:</h2>
+					<ol id="instructions">Instructions:</ol>
+					<h2>Notes:</h2>
+					<ul id="notes">Notes:</ul>
+				</div>
+				
+			</div>
+			
+			<div class="addRecipeForm">
+
+					<form name="recipeForm" id="recipeForm">
+						<h1>Add your own recipe!</h1>
+
+						<label for="userRecipeName">Enter recipe Name:</label><span id="recipeNameErrMsg" class="errMsg"></span><br>
+
+						<div><input type="text" name="userRecipeName" id="userRecipeName"></div><br>
+
+						<label for="userServes">How many does it serve?:</label><span id="servesErrMsg" class="errMsg"></span><br>
+
+						<div><input type="number" name="userServes" id="userServes"></div><br>
+
+						<label for="userPrepTime">Preparation time?:</label><span id="prepTimeErrMsg" class="errMsg"></span><br>
+						
+						<div class="flexRow">
+
+							<input type="number" name="userPrepTime" id="userPrepTime">
+
+							<input type="radio" name="userPrepTimeUnit" id="minutes" value="minutes">
+							<label for="minutes">minutes</label>
+
+							<input type="radio" name="userPrepTimeUnit" id="hours" value="hours">
+							<label for="hours">hours</label>
+							
+						</div>
+						<br>
+							
+						<label for="userCookTime">Cook time?:</label><span id="cookTimeErrMsg" class="errMsg"></span><br>
+						
+						<div class="flexRow">
+
+							<input type="number" name="userCookTime" id="userCookTime">
+							<input type="radio" name="userCookTimeUnit" id="cookMinutes" value="minutes">
+							<label for="minutes">minutes</label>
+
+							<input type="radio" name="userCookTimeUnit" id="cookHours" value="hours">
+							<label for="hours">hours</label>
+							
+						</div>
+						<br>
+
+						<label for="ingredientAmount">Ingredient amount:</label><span id="amountErrMsg" class="errMsg"></span><br>
+						
+						<div class="flexRow">
+							
+							<input type="number" name="userIngredientAmount" id="userIngredientAmount"><span> / </span><input type="number" name="userIngredientAmount2" id="userIngredientAmount2">
+							
+						</div>
+						<br>
+
+						<label for="userIngredientMeasurement">Measurement</label><span id="measurementErrMsg" class="errMsg"></span><br>
+						<div><input type="text" name="userIngredientMeasurement" id="userIngredientMeasurement" placeholder="e.g. Tbs, Tsp, cups, cans"></div><br>
+
+						<label for="ingredient">ingredient:</label><span id="ingredientErrMsg" class="errMsg"></span><br>
+						<div><input type="text" name="ingredient" id="userIngredient"></div><br>
+						<span class="formRules">*add each ingredient, amount, and measurement individually</span><br>
+						<div class="buttonDiv">
+						<input type="button" class="button" name="ingredient" id="addIngredient" value="Add ingredient">
+						<input type="button" class="button" name="ingredient" id="removeIngredient" value="Remove Ingredient">
+						</div>
+						<p>Ingredients:</p>
+						<ul id="tempIngredientList"></ul>
+
+						<label for="userInstructions">instructions:</label><span id="instructionErrMsg" class="errMsg"></span><br>
+						<div><textarea name="userInstructions" id="userInstructions" rows="4" cols="30"></textarea></div><br>
+						<div class="buttonDiv">
+						<span class="formRules">*add each instruction individually</span><br>
+						<input type="button" class="button" name="addInstructions" id="addInstructions" value="Add instruction" formaction="">
+						<input type="button" class="button" name="removeInstruction" id="removeInstruction" value="Remove Instruction">
+						</div>	
+						<p>Instructions:</p>
+						<ul id="tempInstructionsList"></ul>
+
+						<label for="userNotes">Notes:<span class="formRules">Optional</span></label><span id="notesErrMsg" class="errMsg"></span><br>
+						<div><textarea name="userNotes" id="userNotes" rows="4" cols="30"></textarea></div><br>
+						<span class="formRules">*add any notes individually</span><br>
+						<div class="buttonDiv">
+						<input type="button" class="button" name="addNotes" id="addNotes" value="Add Note">
+						<input type="button" class="button" name="removeNote" id="removeNote" value="Remove Note">
+						</div>
+						<p>Notes:</p>
+						<ul id="tempNotesList"></ul>
+
+						<div class="buttonDiv">
+						<input type="button" class="button" name="submit_recipe" id="submit_recipe" value="Submit">
+						<input type="button" class="button" name="resetForm" id="resetForm" value="Reset">
+						</div>
+					</form>
+
+				</div>
+			
+			<div class="products">
+				
+				<div class="viewCart">
+				
+					<form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" >
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+						<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_viewcart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+					</form>
+				
+				</div>
+			
+				<div class="productInfo">
+					
+					<div class="productImage">
+					
+						<img src="images/product.jpg" alt="T's Recipe Book">
+					
+					</div>
+					
+					<div class="productDescription">
+						
+						<h2>T's Recipe Book</h2>
+					
+						<p>Our very first cookbook! Full of delicious and easy to make recipes that will more than satisfy you and your dinner guests. Includes a variety of dishes for every kind of tastebud across breakfast, lunch, and dinner!</p><br>
+						
+						<div class="purchasing">
+							
+							<p class="pricing">Price: $24.99</p>
+							
+							<div class="paypalButtons">
+
+								<form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+									<input type="hidden" name="cmd" value="_s-xclick">
+									<input type="hidden" name="hosted_button_id" value="FZ538KRGBJH2C">
+									<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+									<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+								</form>
+								
+								<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+									<input type="hidden" name="cmd" value="_s-xclick">
+									<input type="hidden" name="hosted_button_id" value="DBWLUN7YU4WG6">
+									<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+									<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+								</form>
+								
+							</div>
+							
+						</div>
+
+					</div>
+				
+				</div>
+				
+				<div class="productInfo">
+				
+					<div class="productImage">
+				
+						<img src="images/product2.jpg" alt="T's Recipe Book 2">
+					
+					</div>
+					
+					<div class="productDescription">
+						
+						<h2>T's Dessert Book.</h2>
+					
+						<p>Cookbook 2: electric boogaloo! Back again with our second cookbook and this time it's all about getting though quantine with a little bit of sanity and a larger waistline! mouthwatering deserts that will please everyone who's been stuck inside for months. buy it as a physical book or digital</p><br>
+						
+						<div class="purchasing">
+							
+							<div>
+								
+								<p class="pricing" id="formatPrice">Price: $24.99</p>
+								
+								<label for="select format">Select format:</label>
+
+								<select id="formatSelect" name="select format">
+
+									<option value="physical" selected>Physical $24.99</option>
+									<option value="digital">Digital $19.99</option>
+
+								</select>
+								
+							</div>
+							
+							<div class="paypalButtons" id="physicalPurchase">
+							
+								<form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+									<input type="hidden" name="cmd" value="_s-xclick">
+									<input type="hidden" name="hosted_button_id" value="8EP86PJPNL2FS">
+									<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+									<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+								</form>
+
+								<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+									<input type="hidden" name="cmd" value="_s-xclick">
+									<input type="hidden" name="hosted_button_id" value="ZBPUKFATR7SGC">
+									<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+									<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+								</form>
+							
+							</div>
+							
+							<div id="digitalPurchase">
+								
+								<form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+									<input type="hidden" name="cmd" value="_s-xclick">
+									<input type="hidden" name="hosted_button_id" value="BSCYS64FAEDKY">
+									<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+									<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+								</form>
+							
+								<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+									<input type="hidden" name="cmd" value="_s-xclick">
+									<input type="hidden" name="hosted_button_id" value="C3ATAXCHCPBPY">
+									<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+									<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+								</form>
+							
+							</div>
+							
+						</div>
+
+					</div>
+				
+				</div>
+				
+				<div class="productInfo">
+					
+					<div class="productImage">
+					
+						<img src="images/eatingWellMagazine.jpg" alt="Eating Well Magazine">
+					
+					</div>
+					
+					<div class="productDescription">
+						
+						<h2>EatingWell Magazine Subscription</h2>
+					
+						<p>EatingWell magazine is a cooking and food resource for people who want to learn how to make healthy food that works for any diet. Get healthy recipes, cooking techniques, diets, food news and health topics throughout the pages of this lifestyle magazine. Learn to cook healthy alternatives to all your favorite comfort foods without depriving yourself of the things you love. Check out recipe ideas for gluten free, vegan, vegetarian, paleo, diabetic, pescatarian or any other special diet to fit your dietary needs in this health and fitness magazine.</p>
+					
+						<div class="purchasing">
+						
+							<div>
+							
+								<p class="pricing" id="subPrice">Price: $10.99</p>
+								
+								<label for="subSelect">Subscription Length:</label>
+								
+								<select id="subSelect" name="subSelect">
+								
+									<option value="month" selected>Monthly</option>
+									<option value="year">Yearly</option>
+								
+								</select>
+							
+							</div>
+							
+							<div class="paypalButtons" id="monthSub">
+							
+								<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+									<input type="hidden" name="cmd" value="_s-xclick">
+									<input type="hidden" name="hosted_button_id" value="NCKSUZ8EUME4W">
+									<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+									<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+								</form>
+
+							</div>
+							
+							<div class="paypalButtons" id="yearSub">
+							
+								<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+									<input type="hidden" name="cmd" value="_s-xclick">
+									<input type="hidden" name="hosted_button_id" value="CKNQAMAY69PCS">
+									<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+									<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+								</form>
+								
+							</div>
+						
+						</div>
+
+					</div>
+				
+				</div>
+				
+				<div class="productInfo">
+				
+					<div class="productImage">
+					
+						<img src="images/recipeBanner.jpg" alt="T's Logo">
+					
+					</div>
+					
+					<div class="productDescription">
+					
+						<p>If you enjoyed this site and wish to see more recipes in the future we'd love if you could donate a few bucks to help keep us going</p>
+						
+						<form action="https://www.sandbox.paypal.com/donate" method="post" target="_top">
+							<input type="hidden" name="hosted_button_id" value="AWKLKN6PPCS3C" />
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+							<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+						</form>
+						
+					</div>
+				
+				</div>
+			
+			</div>
+			
+			<div id="mobileBackButton">
+				<div class="curvedarrow"></div>
+				<p>Back to menu</p>
+			</div>
+		
+		</main>
+	
+	</div>
+</body>
+</html>
