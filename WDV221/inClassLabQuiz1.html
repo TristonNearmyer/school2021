@@ -1,0 +1,107 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript</title>
+
+	
+<script src="Unit-4/dateFunctions.js"></script>	
+<script src="Unit-4/formatFunctions.js"></script>
+	
+<script>
+
+var inputFirstName = "";
+
+var inputLastName = "";
+
+var formattedName = "";
+	
+	function loadName(){
+		
+		inputFirstName = prompt("please enter your first name");
+		
+		inputLastName = prompt("please enter your last name");
+		
+		formattedName = inputFirstName + " " + inputLastName;
+		
+	}
+	
+	function displayFormattedName(inValue){
+		
+		alert("hello " + inValue);
+		
+	}
+	
+	function characterCount(){
+		
+		alert(formattedName.length);
+		
+	}
+	
+	function uppercaseName(){
+		
+		alert(formattedName.toUpperCase());
+		
+	}
+
+</script>
+
+
+
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>In Class Lab Quiz </h2>
+<h3>Instructions:</h3>
+<p>1. Create a global variable called inputFirstName. </p>
+<p>2. Create a global variable called inputLastName. </p>
+<p>3. Create a global variable called formattedName.</p>
+<p>4. Create a function called loadName( ). The function will do the following:</p>
+<ul>
+  <li>Use a prompt to ask the user to enter a first name. </li>
+  <li>Store the value in the inputFirstName variable.</li>
+  <li>Use a prompt to ask the user to enter a last name.</li>
+  <li>Store the value in the inputLastName variable.</li>
+  <li>Concatenate inputFirstName to inputLastName and store the result in the formattedName variable.</li>
+  <li>Add an event handler to the button below that will run the loadName( ) function. </li>
+</ul>
+<p>
+  <input type="button" name="button2" id="button2" value="Load a name" onClick="loadName()">
+</p>
+<p>5. Create a function called displayFormattedName( ). The function will do the following:</p>
+<ul>
+  <li>It will accept one input parameter</li>
+  <li>The function will display the value of the parameter in an alert with an appropriate message.</li>
+  <li>Add an event handler to the button below that will call the displayFormattedName( ). It will pass the formattedName variable as a parameter into the displayFormattedName( ).</li>
+</ul>
+<p>
+  <input type="button" name="button4" id="button4" value="Display Formatted Name" onClick="displayFormattedName(formattedName)">
+</p>
+<p>6. Use your characterCount( ) so the following button will display the number of characters in the formattedName variable. </p>
+<p>
+  <input type="button" name="button5" id="button5" value="Characters in Formatted Name" onClick="characterCount()">
+</p>
+<p>7. Use your uppercaseName( ) so the following button will display the formattedName variable in all uppercase letters.</p>
+<p>
+  <input type="button" name="button6" id="button6" value="Uppercase Formatted Name" onClick="uppercaseName()">
+</p>
+<p>8. Display the following amount formatted as currency. 234551.4. Use a function to format, either one provided or of your own making.</p>
+	
+	<script>
+	
+		document.write(currency(234551.4));
+		
+	</script>
+	
+<p>9. Display today's date at the bottom of the page.</p>
+	
+	<script>
+	
+		document.write(getCurrentDayOfWeek() + "," + getCurrentMonthName() + " " + getCurrentDate() + "," + getCurrentYear());
+	
+	</script>
+	
+</body>
+</html>

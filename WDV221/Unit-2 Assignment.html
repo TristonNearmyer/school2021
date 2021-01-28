@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Variables and Data Types Assignment</title>
+
+<style>
+
+body {background-color:#FC6;
+}
+
+.highlightTitle	{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-style:italic;
+	font-size:14px;
+	text-decoration:underline;
+	color:#096;
+}
+
+</style>
+	
+<script>
+	
+	var school = "DMACC";
+	var courseName = "WDV221";
+	var testScore = 100.00;
+	var courseGrade ;
+	var courseCompleted = false;
+
+</script>
+</head>
+
+<body>
+<h2>WDV221 Intro Javascript</h2>
+<h3>Unit-2 - Variables Assignment</h3>
+<hr />
+<p>Please complete the following exercises on this page. When complete post this page to your  server. Make a link in your WDV221 homework  page for this assignment.</p>
+<p>Submt this assignment on Blackboard. Please include a link to your homework page.</p>
+<h3>For each exercise use a comment line to put the Exercise number within the script. Also place a short description of what the script is doing.</h3>
+<hr />
+<p>1. Define a String variable called schoolName and assign it a value of DMACC.</p>
+<p>2. Define a String variable called courseName and assign it a value of WDV221 Intro Javascript</p>
+<p>3. Define a Numeric variable called testScore and assign it a value of 100.00. </p>
+<p>4. Define a Numeric variable called courseGrade. Do not give it a value.</p>
+<p>5. Define a Boolean variable called courseCompleted. Give it a value of false.</p>
+<p>Display the value of all the variables in their own paragraphs below. </p>
+	<p><script>document.write(school);</script></p>
+	<p><script>document.write(courseName);</script></p>
+	<p><script>document.write(testScore);</script></p>
+	<p><script>document.write(courseCompleted);</script></p>
+<p>Display the number of characters in the course name.</p>
+	<p><script>document.write(courseName.length);</script></p>
+<p>Display the course name as all uppercase letters.</p>
+	<p><script>document.write(courseName.toUpperCase());</script></p>
+<p>Using the String Object determine if the course name contains the letters WDV?  Look at the String methods. Does one or more of them look inside the variable for specific content?</p>
+	<p><script>document.write(courseName.includes("WDV"));</script></p>
+	
+	<p> methods that could work: includes() search()</p>
+</body>
+</html>

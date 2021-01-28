@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript Functions</title>
+	
+	<script>
+		
+		var yourName = "Triston"; 
+	
+		function sayHello(){
+			
+			alert(yourName);
+			
+		}
+		
+		function printHello(){
+			document.write(yourName);
+		}
+		
+		function characterCount(){
+			
+			let testString = prompt("Please enter a message").length;
+			alert(testString);
+			
+		}
+		
+		sayHello()
+		
+		printHello()
+		
+		printHello()
+	
+	</script>
+	
+	
+</head>
+
+<body>
+	
+	<h1><script>printHello()</script></h1>
+	
+	<button onClick="characterCount()">run characterCount function</button>
+	
+</body>
+</html>

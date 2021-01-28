@@ -1,0 +1,15 @@
+/* Scss Document */
+body {
+  background-color: limegreen; }
+
+h1 {
+  color: navy;
+  text-decoration: underline;
+  text-align: center;
+  background-color: red; }
+
+p, h2, h3 {
+  text-align: center; }
+
+body {
+  color: blue; }

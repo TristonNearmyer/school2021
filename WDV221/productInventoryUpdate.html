@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	
+	<script>
+	
+		let products = ["pen", "paper", "pencil"];
+		
+		let inventory = [0, 0, 0]
+		
+		function lookUpArray(toLookUp){
+			//looks for a product that was entered in the form//
+		var indexNumber = products.indexOf(toLookUp);
+			
+		if(indexNumber == -1){
+			return false;
+		}
+			
+			else{
+				return true;
+			}
+		}
+		
+		function lookUpProductIndex(toLookUp){
+			//look up the index of a product on the product arrary then return the index of a product or send -1 if product not found//
+			
+			//var indexNumber = products.indexOf(toLookUp);
+			
+			//return indexNumber.indexOf(toLookUp);
+			
+			return products.indexOf(toLookUp);
+		}
+		
+		function processInventoryChange(){
+			//get input.value from the form and store it as producttofind
+			//cll lookupproductindex to find a match
+			//if -1 return error message
+			//using row number of product get matching row from inventory array then add or subract inventory input from inventory row
+			//display complete or new iventory amount 
+			
+			let productToFind = document.getElementById("formInput").value;
+			
+			let productIndex = lookUpProductIndex(productToFind);
+			
+			if(productIndex==-1){
+				document.getElementById("productErrorMessage").innerHTML = "please enter a valid product";//display an error message
+				return; //stops function
+			}
+			
+			if(isNaN(document.getElementById("inventoryChange").value)){
+				document.getElementById("inventoryErrorMessage").innerHTML = "please enter a number";
+				return;
+			}
+			
+		inventory[productIndex] = inventory[productIndex] + parseInt(document.getElementById("inventoryChange").value);
+			
+		document.getElementById("newInventory").innerHTML = inventory;
+		}
+	
+	</script>
+	
+</head>
+
+<body>
+	<p>product</p>
+	<p><input type="text" id="formInput"><span id="productErrorMessage"></span></p>
+	<p>inventory</p>
+	<p><input type="text" id="inventoryChange"><span id="inventoryErrorMessage"></span></p>
+	<p id="newInventory">new inventory</p>
+	<button onClick="processInventoryChange()">submit</button>
+	
+	
+</body>
+</html>
