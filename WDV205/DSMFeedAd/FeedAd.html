@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Des Moines Feed</title>
+	
+	<style>
+	
+		.squareAdContainer{
+			width: 250px;
+			
+			height: 250px;
+			
+			background-image: url("mountains_landscape_hd_4k.png");
+			
+			display: flex;
+			
+			align-items: flex-end;
+			
+			z-index: -1;
+			
+			overflow: hidden;
+		}
+		
+		.feedLogo{
+			opacity: 0;
+			
+			position: relative;
+			
+			top: -100px;
+			
+			left: -20px;
+			
+			z-index: 1;
+			
+			animation: feedLogo;
+			
+			animation-delay: 5.5s;
+			
+			animation-duration: 1s;
+			
+			animation-fill-mode: forwards;
+			
+			animation-timing-function: linear;
+		}
+		
+		.feed{
+			opacity: 0;
+			
+			height: 100px;
+			
+			z-index: 0;
+			
+			position: relative;
+			
+			left: -170px;
+			
+			animation: feedSlideUp;
+			
+			animation-delay: 2.5s;
+			
+			animation-duration: 1s;
+			
+			animation-fill-mode: forwards;
+		}
+		
+		.backgroundBird{
+			opacity: 0;
+			
+			position: relative;
+			
+			top: -100px;
+			
+			z-index: 0;
+			
+			animation: backgroundBirdFlight;
+			
+			animation-duration: 2s;
+			
+			animation-iteration-count: infinite;
+			
+			animation-fill-mode: forwards;
+			
+			animation-timing-function: linear;
+		}
+		
+		.backgroundBird2{
+			opacity: 0;
+			
+			position: relative;
+			
+			top: -150px;
+			
+			z-index: 1;
+			
+			animation: backgroundBirdFlight;
+			
+			animation-delay: 1s;
+			
+			animation-duration: 2s;
+			
+			animation-iteration-count: infinite;
+			
+			animation-fill-mode: forwards;
+			
+			animation-timing-function: linear;
+		}
+		
+		.pigeon{
+			opacity: 0;
+			
+			height: 100px;
+			
+			position: relative;
+			
+			right: 300px;
+			
+			z-index: 1;
+			
+			animation: pigeonEntrance;
+			
+			animation-duration: 1s;
+			
+			animation-delay: 4s;
+			
+			animation-fill-mode: forwards;
+			
+			animation-timing-function: linear;
+			
+		}
+		
+		.pigeonWalk{
+			animation: pigeonWalk;
+			
+			animation-duration: 0.5s;
+			
+			animation-delay: 4s;
+		
+			animation-fill-mode: forwards;
+			
+			animation-iteration-count: 2;
+			
+			animation-timing-function: linear;
+		}
+		
+		
+		/*animation*/
+		
+		@keyframes feedLogo{
+			from{opacity: 0;}
+			
+			to{opacity: 1;}
+		}
+		
+		@keyframes feedSlideUp{
+			
+			from{
+				opacity:1;
+				
+				transform: translateY(100%);
+			}
+			
+			to{
+				opacity:1;
+				
+				transform: translateY(0);
+			}
+		}
+		
+		@keyframes backgroundBirdFlight{
+			from{
+				opacity: 1;
+				
+				transform: translateX(-150%);
+			}
+			
+			to{
+				opacity: 1;
+				
+				transform: translateX(600%);
+			}
+		}
+		
+		@keyframes pigeonEntrance{
+			
+			from{
+				opacity: 1;
+				
+				transform: translateX(100%);
+			}
+			
+			to{
+				opacity: 1;
+				
+				transform: translateX(0%);
+			}
+		}
+		
+		@keyframes pigeonWalk{
+			
+				0%{transform: translateY(0%);}
+				
+				50%{transform: translateY(10%);}
+				
+				100%{transform: translateY(0%);}
+		}
+		
+		
+		}
+	
+	</style>
+	
+</head>
+
+<body>
+	
+	<div class="squareAdContainer">
+		
+		<div class="backgroundBird">
+		
+			<img src="bird.gif" alt="bird">
+		
+		</div>
+		
+		<div class="backgroundBird2">
+		
+			<img src="bird.gif" alt="bird">
+		
+		</div>
+		
+		<div class="feedLogo">
+		
+			<img src="Des-Moines-Feed-Co-Logo.png" alt="feed logo">
+		
+		</div>
+		
+		<div class="feed">
+		
+			<img src="grass.png" alt="grass">
+		
+		</div>
+		
+		<div class="pigeon">
+			<div class="pigeonWalk">
+			<img src="pigeon.gif" alt="pigeon">
+			</div>
+		</div>
+	
+	</div>
+	
+	
+	
+</body>
+</html>
+<!-- leaderboard: 728x90, 320x50
+square: 250x250, 200x200 
+sidebar: 300x600, 150x300 -->

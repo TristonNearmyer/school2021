@@ -1,0 +1,153 @@
+/* Scss Document */
+
+$translate:skewX(-30deg);
+
+@font-face {
+	font-family: "Avengeance Heroic Avenger";
+	src: url("../Font/AVENGEANCE HEROIC AVENGER.ttf")
+	 url("../Font/AVENGEANCE HEROIC AVENGER AT.otf")
+	 url("../Font/AVENGEANCE HEROIC AVENGER AT.ttf")
+	url("../Font/AVENGEANCE HEROIC AVENGER BD.otf")
+	 url("../Font/AVENGEANCE HEROIC AVENGER BD.ttf")
+	 url("../Font/AVENGEANCE HEROIC AVENGER BI.otf")
+	 url("../Font/AVENGEANCE HEROIC AVENGER BI.ttf")
+	url("../Font/AVENGEANCE HEROIC AVENGER.otf");
+}
+
+body{
+	background-image: url("../images/Capture.PNG");
+}
+
+@mixin transform($property){
+	transform: $translate;
+}
+
+
+.header{
+	display: flex;
+	justify-content: center;
+}
+
+.adContainer{
+	width: 728px;
+	height: 90px;
+	background-image: linear-gradient(to right,black,blueviolet);
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	animation: containerSlideDown, containerSlideUp;
+	animation-delay: 0s, 10s;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+.avengersLogo{
+	opacity: 0;
+	position: relative;
+	left: 50px;
+	animation: logoSlideIn;
+	animation-duration: 1s;
+	animation-delay: 1s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: 0;
+}
+
+.avengersLogo img{
+	@include transform($translate);
+}
+
+.infinityStones{
+	opacity: 0;
+	animation: stoneFadeIn, stoneRotation;
+	animation-delay: 1s,1s;
+	animation-duration: 1s, 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+	animation-iteration-count: 1,infinite;
+}
+
+.adText{
+	opacity: 0;
+	position: relative;
+	bottom: 15px;
+	width: 300px;
+	color: white;
+	font-size: 15px;
+	z-index: 1;
+	font-family: 'AVENGEANCE HEROIC AVENGER';
+	animation: textSlideIn;
+	animation-delay: 2s;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+
+
+.adText:hover{
+	transition: color,1s;
+	transition: font-size,1s;
+	color: gold;
+	font-size: 15.5px;
+}
+
+@keyframes containerSlideDown{
+	from{transform: translateY(-100px);}
+	
+	to{transform: translateY(0px);}
+}
+
+@keyframes logoSlideIn{
+	from{transform: translateX(-100px);
+		 opacity: 0;}
+	
+	to{transform: translateX(0px);
+		opacity: 1;}
+}
+
+@keyframes stoneFadeIn{
+	from{opacity: 0;}
+	
+	to{opacity: 1;}
+}
+
+@keyframes stoneRotation{
+	0%{transform: rotate(0deg);}
+	
+	50%{transform: rotate(180deg);}
+	
+	100%{transform: rotate(360deg);}
+}
+
+@keyframes textSlideIn{
+	from{transform: translateX(300px);
+		 opacity: 1;}
+	
+	to{transform: translateX(0px);
+		opacity: 1;}
+}
+
+@keyframes containerSlideUp{
+	from{transform: translateY(0px);}
+	
+	to{transform: translateY(-100px);}
+}
+
+
+@media only screen and(min-width:400px){
+	.adText{
+		font-size: 12px;
+		letter-spacing: 2.5px;
+		font-family: 'AVENGEANCE HEROIC AVENGER';
+	}
+	
+	.adText:hover{
+	transition: color,1s;
+	transition: font-size,1s;
+	color: gold;
+	font-size: 12.5px;
+	}
+	
+}

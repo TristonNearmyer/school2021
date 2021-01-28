@@ -1,0 +1,115 @@
+<!DOCTYPE htnml>
+<html>
+<head>
+<title>Skills Form</title>
+<style>
+
+* {
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+	}
+
+body{
+	font-family:"Helvetica",Ariel,sans-serif;
+	font-size:125%;
+	color:#333;
+	background-color:#9bd;
+	}
+	
+#formcontainer{
+	background-color:lightgray;
+	width:800px;
+	margin:10px auto;
+	padding:20px;
+	border:2px solid black;
+	border-radius:15px;
+	}
+	
+legend{
+	width:100%;
+	border-bottom:1px dotted purple;
+	padding-bottom:5px;
+	margin-bottom:15px:
+	font-size:1.3em;
+	}
+
+fieldset{
+	width:25em;
+	margin:20px;
+	border:hidden;
+	}
+
+fieldset div{
+	display:flex;
+	align-items:center;
+	margin:5px 0;
+	}
+	
+label{
+	order:1;
+	width:10em;
+	text-align:right;
+	padding-right:0.5em;
+	}
+
+input,select{
+	order:2;
+	flex:1 1 auto;
+	padding:2px 5px 4px;
+	border-radius:5px;
+	margin-top:5px;
+	}	
+
+input[type="radio"]{
+	order:1;
+	flex:none;
+	width:auto;
+	margin-left:10em;
+	}	
+	
+input[type="radio"] ~ label{
+	width:auto;
+	text-align:left;
+	padding-left:0.5em;
+}
+
+</style>
+</head>
+<body>
+<div id="formcontainer">
+<form id="Skills" method="post" action="contact_form_response.php">
+	<legend>My Skill Set</legend>
+	<fieldset>
+		<div>
+			<label>First Name</label>
+			<input id="firstname" name="firstname" type="text">
+		</div>
+
+		<div>
+			<label>Last Name</label>
+			<input id="lastname" name="lastname" type="text">
+		</div>
+		
+	<p>My major is...</p>
+
+		<div>
+			<input id="major" name="major" type="radio">
+			<label>Web Development</label>
+		
+			<input id="major" name="major" type="radio">
+			<label>Graphic Design</label>
+			
+			<input id="major" name="major" type="radio">
+			<label>Digital Marketing</label>
+		
+			<input id="major" name="major" type="radio">
+			<label>Other</label> 
+			<input id="other" name="other" type="text">
+		</div>
+
+
+	</fieldset>
+</div><!--close formcontainer-->
+</body>
+</html>

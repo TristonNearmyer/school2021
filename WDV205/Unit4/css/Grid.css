@@ -1,0 +1,60 @@
+/* Scss Document */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+header {
+  background-color: lightgray;
+  padding: 10px; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto; }
+
+.grid-item {
+  display: grid;
+  border: 1px solid red;
+  justify-content: center;
+  align-content: center; }
+
+.gallary {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  border: 1px solid red;
+  width: 50%; }
+
+nav {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px; }
+
+main {
+  background-color: white; }
+
+footer {
+  background-color: black;
+  color: white; }
+
+h1 {
+  font-weight: bold; }
+
+h2 {
+  text-align: center; }
+
+.text2 {
+  -webkit-column-count: 2;
+  /*Chrome,Safari,Opera*/
+  -moz-column-count: 2;
+  /*Firefox*/
+  column-count: 2;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+  width: 30%;
+  margin-left: 40px;
+  line-height: 2em;
+  text-align: center; }
+
+/*# sourceMappingURL=Grid.css.map */

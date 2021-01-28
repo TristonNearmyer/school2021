@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Administrator page</title>
+	 <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="proper care for pets">
+  <meta name="keywords" content="proper care, domestic shorthair, German shepherd">
+
+ <link rel="stylesheet" type="text/css" href="CSS/petsToGo.css"> 
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	</script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+	</script>
+	
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<style>
+
+h3{
+	margin-top:10px;
+	text-decoration:underline;
+}
+
+</style>
+<body>
+	<section id="top"></section>
+<div class="container-fluid" style="padding: 0px">
+	<header>
+		<img src="images/ptgbanner.jpg" alt="banner" class="col-lg-12" style="padding: 0px">
+		<h1>Pets-To-Go</h1>
+	</header>
+	
+		<nav class="navbar justify-content-center sticky-top">
+		<center>
+		<ul>
+			<li><a href="index.html">About Us</a></li>
+			<li><a href="pets.html">About Our Pets</a></li>
+			<li><a href="gallery.html">Pet Gallery</a></li>
+			<li><a href="care.html">Proper Care</a></li>
+		</ul>
+		</center>
+		</nav>
+	
+	<div class="row">
+	<div class="col-lg">
+		
+		<h2>Add a pet</h2>
+<form action="insertPets.php" method="post">
+<label for="petName">Pet Name: </label>	<br>
+<input type="text" id="petName" pet="eventName" value=""><br>
+	
+<label for="petDescription">Pet Description:</label><br>
+<textarea id="petDescription" name="petDescription" rows="10" cols="45" value=""></textarea><br>
+	
+<label for="petBreed">Pet Breed:</label><br>
+<input type="text" id="petBreed" name="petBreed" value=""><br>
+	
+<lable for="petTitle">Title:</lable><br>
+<input type="date" id="eventDate" name="eventDate" value=""><br>
+	
+<input name="form_submit" id="form_submit" type="submit" value="submit">
+
+<input name="reset" id="button" type="reset" value="reset">
+</form>
+		
+	</div>
+	</div>
+	
+	<footer class="row">
+	<div class="col-lg-6">
+	<p><a href="#top">Go to Top</a></p>
+	<a href="Contact_Form.html">Contact Us</a>
+	<p>Pets To Go Animal Shelter</p>
+	<p>3183 S Veterans Pkwy</p>
+	<p>Springfield, Illinois 62704</p>
+
+	<p>(217) 698-3091</p>
+		</div>
+	<div class="col-lg-6">
+	<img src="images/ptglogo.png" alt="logo" width="200" height="204">
+	</div>
+	</footer>
+
+</div> <!--close container div-->
+</body>
+</html>
