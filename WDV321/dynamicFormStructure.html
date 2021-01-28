@@ -1,0 +1,153 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV321 Advanced Javascript</title>
+	
+	<style>
+		
+		body{
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-image: linear-gradient(lightblue , white);
+		}
+	
+		div {
+			display: none;
+		}
+	
+	</style>
+	
+	<script>
+		
+		function readyJavascript(){
+	
+			document.querySelector("#contactType").addEventListener("change", function(){
+				var contactReason = document.querySelector("#contactType").value;
+				
+				if (contactReason == "C"){
+					
+					document.querySelector("#complaint").style.display = "block";
+					document.querySelector("#techProblem").style.display = "none";
+					document.querySelector("#prodIssue").style.display = "none";
+					return;
+					
+				}
+				
+				if (contactReason == "T"){
+					
+					document.querySelector("#complaint").style.display = "none";
+					document.querySelector("#techProblem").style.display = "block";
+					document.querySelector("#prodIssue").style.display = "none";
+					return;
+					
+				}
+				
+				
+				if (contactReason == "P"){
+					
+					document.querySelector("#complaint").style.display = "none";
+					document.querySelector("#techProblem").style.display = "none";
+					document.querySelector("#prodIssue").style.display = "block";
+					return;
+					
+				}
+				
+				else{
+					
+					document.querySelector("#complaint").style.display = "none";
+					document.querySelector("#techProblem").style.display = "none";
+					document.querySelector("#prodIssue").style.display = "none";
+					return;
+					
+				}
+				
+			})
+			
+		}
+	
+	</script>
+	
+</head>
+
+<body onLoad="readyJavascript()">
+<h1>WDV321 Advanced Javascript</h1>
+<h2>Dynamic Form Structure - Assignment</h2>
+<p>Use this page as the basis for your assignment. Given the drop down list provided on this page please do the following things.</p>
+<p>
+  <label>Please Select your reason for contactin us.
+    <select name="contactType" id="contactType">
+		<option selected >Select reason</option>
+      <option value="C">Complaints</option>
+      <option value="T">Technical Problems</option>
+      <option value="P">Product Issues</option>
+    </select>
+  </label>
+</p>
+<ol>
+  <li>When  Complaints are selected please dynamically create and display a new drop down list that includes at least four options of your choice.</li>
+	
+	<div  id="complaint">
+		
+		<select name="complaint">
+			
+			<option>staff issue</option>
+			<option>legal issue</option>
+			<option>cant come up with complaint</option>
+			<option>ohter</option>
+			
+		</select>
+		
+	</div>
+  <li>When Technical Problems are selected please dynamically create and display at least four types of problems with an associated checkbox.</li>
+	
+	<div id="techProblem">
+	
+	  <p>
+		  <label>
+		    <input type="checkbox" name="Technical Problems" value=" " id="TechnicalProblems_0" />
+		    Website Error</label>
+		  <br />
+		  <label>
+		    <input type="checkbox" name="Technical Problems" value=" " id="TechnicalProblems_1" />
+		    Email Issue</label>
+		  <br />
+		  <label>
+		    <input type="checkbox" name="Technical Problems" value=" " id="TechnicalProblems_2" />
+		    out of date</label>
+		  <br />
+		  <label>
+		    <input type="checkbox" name="Technical Problems" value=" " id="TechnicalProblems_3" />
+		    other</label>
+		  <br />
+	  </p>
+    </div>
+  <li>When Product Issues aer selected please dynamically create and display at least four types options as a grouped set of radio buttons. </li>
+	
+	<div id="prodIssue">
+	
+	  <p>
+		  <label>
+		    <input type="radio" name="productIssue" value=" " id="productIssue_0" />
+		    expired</label>
+		  <br />
+		  <label>
+		    <input type="radio" name="productIssue" value=" " id="productIssue_1" />
+		    broken</label>
+		  <br />
+		  <label>
+		    <input type="radio" name="productIssue" value=" " id="productIssue_2" />
+		    warranty issue</label>
+		  <br />
+		  <label>
+		    <input type="radio" name="productIssue" value=" " id="productIssue_3" />
+		    other</label>
+		  <br />
+	  </p>
+    </div>
+  <li>When a new option is selected your script should remove any of the dynamic content. </li>
+</ol>
+<p>&nbsp;</p>
+</body>
+</html>

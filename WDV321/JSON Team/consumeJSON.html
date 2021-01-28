@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV321 Advanced Javascript - JSON</title>
+<script src="createJSON.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+<script>
+  let JSONObject1 = localStorage.getItem("Student 1");
+  let parsedObject1 = JSON.parse(JSONObject1);
+
+  let JSONObject2 = localStorage.getItem("Student 2");
+  let parsedObject2 = JSON.parse(JSONObject2);
+
+  let JSONObject3 = localStorage.getItem("Student 3");
+  let parsedObject3 = JSON.parse(JSONObject3);
+
+
+  //alert(parsedObject3.student_id);
+  //alert(parsedObject3.student_gpa);
+  //alert(parsedObject3.student_courses);
+
+  //parseInt(parsedObject1.student_courses.length)
+
+function pageLoad() {
+  document.getElementById("id1").innerHTML = parsedObject1.student_id;
+  document.getElementById("gpa1").innerHTML = parsedObject1.student_gpa;
+
+  for (x=0; x < parseInt(parsedObject1.student_courses.length); x++) {
+    document.getElementById("courses1").innerHTML = document.getElementById("courses1").innerHTML + "<li>" + parsedObject1.student_courses[x] + "</li>";
+
+  }
+
+  document.getElementById("id2").innerHTML = parsedObject2.student_id;
+  document.getElementById("gpa2").innerHTML = parsedObject2.student_gpa;
+
+  for (x=0; x < parseInt(parsedObject2.student_courses.length); x++) {
+    document.getElementById("courses2").innerHTML = document.getElementById("courses2").innerHTML + "<li>" + parsedObject2.student_courses[x] + "</li>";
+
+  }
+
+  document.getElementById("id3").innerHTML = parsedObject3.student_id;
+  document.getElementById("gpa3").innerHTML = parsedObject3.student_gpa;
+
+  for (x=0; x < parseInt(parsedObject3.student_courses.length); x++) {
+    document.getElementById("courses3").innerHTML = document.getElementById("courses3").innerHTML + "<li>" + parsedObject3.student_courses[x] + "</li>";
+
+  }
+}
+
+</script>
+
+
+<!--
+    Instructions:
+    	1. Incorporate the createJSON.js file into this page as an external javascript file.
+        2. Access the JSON object in local storage and convert it into a Javascript object.
+        3. Use the information in the object to complete the student card.
+-->
+
+<style>
+	.studentCard	{
+		width:200px;
+		box-sizing:border-box;
+		background-color:lightblue;
+		padding-left:5px;
+		padding-top:3px;
+		border:thin solid blue;
+		box-shadow: 2px 2px 2px grey;
+	}
+
+	.studentCard h3	{
+		margin:0px;
+	}
+</style>
+
+
+
+</head>
+
+<body onload = "pageLoad()">
+	<h1>WDV321 Advanced Javascript</h1>
+    <h2>Unit-8 JSON Objects</h2>
+    <h3>Creating and consuming a JSON object</h3>
+
+<div class="studentCard">
+	<h3>Student ID: </h3><span id="id1"></span>
+    <p>Student GPA:</p><span id="gpa1"></span>
+	<p>Student Courses:
+    	<ul id = "courses1">
+			<!-- display the courses as list items -->
+    	</ul>
+  </p>
+
+</div>
+
+<div class="studentCard">
+	<h3>Student ID: </h3><span id="id2"></span>
+    <p>Student GPA:</p><span id="gpa2"></span>
+	<p>Student Courses:
+    	<ul id = "courses2">
+			<!-- display the courses as list items -->
+    	</ul>
+  </p>
+
+</div>
+
+<div class="studentCard">
+	<h3>Student ID: </h3><span id="id3"></span>
+    <p>Student GPA:</p><span id="gpa3"></span>
+	<p>Student Courses:
+    	<ul id = "courses3">
+			<!-- display the courses as list items -->
+    	</ul>
+  </p>
+
+</div>
+
+
+
+
+</body>
+</html>

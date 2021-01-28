@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV321 Advanced Javascript</title>
+	
+	<style>
+	
+		ul{
+			display: none;
+		}
+	
+	</style>
+	
+	<script>
+	
+		function readyJavascript(){
+			
+			document.querySelector("#visHide").onclick = function (){
+				alert("hide p2");
+				
+				document.querySelector("#p2").style.visibility = "hidden";
+			}	
+			
+			document.querySelector("#visShow").onclick = function (){
+				alert("show p2");
+				
+				document.querySelector("#p2").style.visibility = "visible";
+			}
+			
+			document.querySelector("#disHide").addEventListener("click", function(){
+				document.querySelector("#p2").style.display = "none";
+																})
+			document.querySelector("#disShow").addEventListener("click", function(){
+				document.querySelector("#p2").style.display = "block";
+																})
+			
+			document.querySelector("#showVisList").addEventListener("click", function(){
+				document.querySelector("#visList").style.display = "block";
+				document.querySelector("#disList").style.display = "none";
+																})
+			document.querySelector("#showDisList").addEventListener("click", function(){
+				document.querySelector("#disList").style.display = "block";
+				document.querySelector("#visList").style.display = "none";
+																})
+			
+		}
+	
+	</script>
+	
+</head>
+
+<body onLoad="readyJavascript()">
+	
+	<h1>WDV321 Advanced Javascript</h1>
+	
+	<h2>UNIT-3 Dynamic Content and Structure</h2>
+	
+	<h3>Style Object - Visibility and Display</h3>
+	
+	<p id="p1">This is paragraph one</p>
+	
+	<p id="p2">This is paragraph two.</p>
+	
+	<p id="p3">This is paragraph three.</p>
+	
+	<p> Visibility
+		<button id="visShow">show p2</button>
+		<button id="visHide">Hide p2</button>
+	</p>
+	
+	<p>Display
+		<button id="disHide">Hide p2</button>
+		<button id="disShow">Show p2</button>
+	</p>
+	
+	<h1>Dynamic list presentation</h1>
+	
+	<p>show lists
+		<button id="showVisList">Visibility</button>
+		<button id="showDisList">Display</button>
+	</p>
+	
+	<ul id="visList">Visibility
+	
+		<li>Hidden</li>
+		<li>Visible</li>
+	
+	</ul>
+	
+	<ul id="disList">Display
+	
+		<li>None</li>
+		<li>initial</li>
+	
+	</ul>
+</body>
+</html>

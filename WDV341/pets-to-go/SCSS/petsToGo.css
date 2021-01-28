@@ -1,0 +1,42 @@
+/*
+Error: Invalid CSS after "green": expected expression (e.g. 1px, bold), was ";"
+        on line 3 of C:\xampp\htdocs\Homework2021\HomePage\WDV341\pets-to-go\SCSS\petsToGo.sass
+
+1: /* Sass Document *\/
+2: 
+3: $primaryColor:green;
+4: 
+5: body{
+6: 	background-color: gray;
+7: }
+8: 
+
+Backtrace:
+C:\xampp\htdocs\Homework2021\HomePage\WDV341\pets-to-go\SCSS\petsToGo.sass:3
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1308:in `expected'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/lexer.rb:240:in `expected!'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/parser.rb:897:in `assert_done'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/parser.rb:69:in `parse'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script/parser.rb:228:in `parse'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/script.rb:27:in `parse'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:1169:in `parse_script'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:779:in `parse_variable'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:650:in `parse_line'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:539:in `build_tree'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:558:in `block in append_children'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:557:in `each'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:557:in `append_children'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:417:in `_to_tree'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:290:in `render'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:396:in `run'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:63:in `process_result'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/bin/sass:23:in `load'
+C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"green\": expected expression (e.g. 1px, bold), was \";\"\A         on line 3 of C:\xampp\htdocs\Homework2021\HomePage\WDV341\pets-to-go\SCSS\petsToGo.sass\A \A 1: /* Sass Document */\A 2: \A 3: $primaryColor:green;\A 4: \A 5: body{\A 6: 	background-color: gray;\A 7: }\A 8: "; }

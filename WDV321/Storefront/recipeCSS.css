@@ -1,0 +1,657 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	display: flex;
+	justify-content: center;
+	background-image: url("images/recipeBanner.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+	margin: 0px;
+	height: 720px;
+}
+
+#container {
+	background-color: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	overflow-y: scroll;
+}
+
+#container::-webkit-scrollbar {
+	display: none;
+}
+
+#container {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+main {
+	display: none;
+	width: 100%;
+	color: white;
+	top: 700px;
+	position: relative;
+}
+
+nav {
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+}
+
+#navigation::-webkit-scrollbar {
+	display: none;
+}
+
+#navigation {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+#navigation {
+	display: flex;
+	flex-direction: row;
+	overflow-x: scroll;
+	margin: 0px;
+	padding: 0px;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.navigation {
+	display: flex;
+	flex-direction: row;
+	width: 90%;
+	height: 90%;
+	align-items: center;
+	overflow: hidden;
+}
+
+.navigation div{
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+	height: 50%;
+	width: 45%;
+	border: solid 1px black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
+	flex-wrap: wrap;
+}
+
+.navigation div:hover{
+	height: 60%;
+	width: 50%;
+	cursor: pointer;
+}
+
+.navigation p{
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	font-weight: bold;
+	font-size: 60px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	align-items: center;
+	margin: 0px;
+}
+
+.servingSelect{
+	font-size: x-large;
+	font-weight: bold;
+	margin: 10px 0px;
+	padding: 5px;
+	text-align: right;
+	top: 0;
+	position: sticky;
+	
+}
+
+aside{
+	display: flex;
+	flex-direction: column;
+	width: 20%;
+	height: fit-content;
+	padding-left: 10px;
+	margin-right : 15px;
+	margin-top: 10px;
+	position: sticky;
+	top: 0;
+}
+
+.curvedarrow {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-right: 9px solid orange;
+    transform: rotate(-100deg);
+}
+
+.curvedarrow:after {
+    content: "";
+    position: absolute;
+    border: 0 solid transparent;
+    border-top: 3px solid orange;
+    border-radius: 20px 0 0 0;
+    top: -12px;
+    left: -9px;
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+}
+
+#mobileBackButton{
+	display: none;
+}
+
+.backButton {
+	color: orange;
+	display: flex;
+	flex-direction: row;
+	cursor: pointer;
+}
+
+.backButton p{
+	display: inline;
+	margin: 0;
+}
+
+main textarea{
+	width: 50%;
+}
+
+.twitter-timeline{
+	width: 100%;
+	height: 500px;
+	overflow-y: scroll;
+}
+
+.addRecipeForm {
+	display: none;
+	justify-content: center;
+	width: 75%;
+}
+
+#recipeForm label{
+	font-size: 35px;
+	font-weight: bold;
+}
+
+#recipeForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+}
+
+.errMsg {
+	font-size: 15px;
+	color: red;
+}
+
+.formRules {
+	font-size: 10px;
+	color: orange;
+}
+
+#userRecipeName, #userServes, #userIngredientMeasurement, #userIngredient {
+	width: 40%;
+}
+
+#userPrepTime, #userCookTime {
+	width: 10%;
+}
+
+#userIngredientAmount,#userIngredientAmount2 {
+	width: 10%;
+}
+
+.buttonDiv {
+	margin-right: 5px;
+}
+
+.button {
+	width: 35%;
+	background-color: orange;
+	border: none;
+	border-radius: 12px;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.button:hover {
+	font-size: 20px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#chiliRecipe {
+	
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	width: 75%;
+	padding-left: 10px;
+	margin-top: 10px;
+	
+}
+
+h1{
+	font-size: xx-large;
+	font-weight: bold;
+	text-align: center;
+}
+
+#chiliRecipe img{
+	
+	border: solid 1px black;
+	width: 100%;
+	height: 400px;
+	
+}
+
+.recipe{
+	width: 100%;
+	
+}
+
+p {
+	font-weight: bold;
+}
+
+.recipe li {
+	font-size: large;
+	padding-bottom: 10px;
+}
+
+.products {
+	display: none;
+	flex-direction: column;
+	width: 75%;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+
+.productInfo {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 30%;
+	border-bottom: 1px solid orange;
+	padding: 10px 0px;
+	justify-content: space-between;
+}
+
+.productImage {
+	width: 30%;
+	height: 95%;
+}
+
+.productImage img{
+	width: 100%;
+	height: 100%;
+}
+
+.productDescription {
+	width: 65%;
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.purchasing {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.paypalButtons {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+#digitalPurchase {
+	display: none;
+}
+
+#yearSub {
+	display: none;
+}
+
+.viewCart {
+	text-align: end;
+}
+
+
+
+@media only screen and (max-width: 800px) and (min-width:550px){
+	.servingSelect {
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+	.curvedarrow {
+    border-right: 9px solid white;
+}
+
+.curvedarrow:after {
+    border-top: 3px solid white;
+}
+	
+	.backButton {
+		display: none;
+	}
+	
+	#mobileBackButton {
+		width: 15%;
+		border: 1px solid black;
+		border-radius: 7px;
+		background-color: orange;
+		color: white;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		position: sticky;
+		top: 0px;
+	}
+	
+	#mobileBackButton p{
+		display: inline;
+		margin: 0;
+	}
+	
+	main {
+		flex-direction: column-reverse;
+	}
+	
+	#chiliRecipe {
+		width: 100%;
+		margin-top: 0px;
+		padding-left: 0px;
+	}
+	
+	#chiliRecipe h1{
+		font-size: 45px;
+		text-align: center;
+	}
+	
+	#chiliRecipe p {
+		font-size: 20px;
+		
+	}
+	
+	#chiliRecipe h2 {
+		font-size: 35px;
+	}
+	
+	#chiliRecipe img {
+		width: 100%;
+		height: 200px;
+		border-left: 0px;
+		border-right: 0px;
+	}
+	
+	.recipe {
+		padding-left: 10px;
+		width: 96%;
+	} 
+	
+	.recipe li{
+		font-size: 20px;
+		
+	}
+	
+	#ingredients {
+		padding-left: 10px;
+	}
+	
+	#instructions {
+		padding-left: 10px;
+	}
+	
+	#notes {
+		padding-left: 10px;
+	}
+	
+	.addRecipeForm {
+		width: 100%;
+	}
+	
+	.products {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	
+	aside{
+		margin: 0px;
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		padding: 0;
+		border-left: 0px;
+		border-right: 0px;
+	}
+	
+	aside h2 {
+		width: 100%;
+		text-align: center;
+	}	
+}
+
+@media only screen and (max-width: 500px) {
+	
+	body {
+		height: 850px;
+	}
+	
+	main {
+		top: 900px;
+	}
+	
+	#mobileBackButton {
+		width: 30%;
+		border: 1px solid black;
+		border-radius: 7px;
+		background-color: orange;
+		color: white;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		position: sticky;
+		top: 0px;
+	}
+	
+	#mobileBackButton p{
+		display: inline;
+		margin: 0;
+	}
+	
+		.curvedarrow {
+    border-right: 9px solid white;
+}
+
+.curvedarrow:after {
+    border-top: 3px solid white;
+}
+	
+	main {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	#navigation {
+		flex-direction: column
+	}	
+	
+	.navigation div {
+		width: 100%;
+	}
+	
+	.navigation div:hover{
+		height: 50%;
+		width: 100%;
+		cursor: none;
+	}
+	
+	.servingSelect {
+		position: static;
+	}
+	
+	#chiliRecipe {
+		width: 100%;
+		margin-top: 0px;
+		padding-left: 0px;
+	}
+	
+	#chiliRecipe h1{
+		font-size: 45px;
+		text-align: center;
+	}
+	
+	#chiliRecipe p {
+		font-size: 20px;
+		
+	}
+	
+	#chiliRecipe h2 {
+		font-size: 35px;
+	}
+	
+	#chiliRecipe img {
+		width: 100%;
+		height: 200px;
+		border-left: 0px;
+		border-right: 0px;
+	}
+	
+	.recipe {
+		padding-left: 10px;
+		width: 96%;
+	} 
+	
+	.recipe li{
+		font-size: 20px;
+		
+	}
+	
+	#ingredients {
+		padding-left: 10px;
+	}
+	
+	#instructions {
+		padding-left: 10px;
+	}
+	
+	#notes {
+		padding-left: 10px;
+	}
+	
+	aside{
+		display: none;
+	}
+	
+	
+	main textarea{
+		width: 90%;
+	}
+	
+	.addRecipeForm {
+		width: 100%;
+	}
+	
+	#recipeForm {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		
+	}
+	
+	#userRecipeName, #userServes, #userIngredientMeasurement, #userIngredient {
+		width: 90%;
+	}
+
+	#userPrepTime, #userCookTime {
+		width: 10%;
+	}
+
+	#userIngredientAmount,#userIngredientAmount2 {
+		width: 20%;
+	}
+
+	.buttonDiv {
+		margin-right: 5px;
+		width: 100%;
+	}
+
+	.button {
+		width: 70%;
+		background-color: orange;
+		border: none;
+		border-radius: 12px;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+	}
+
+	.button:hover {
+		font-size: 20px;
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	}
+	
+	.flexRow{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	
+	.products{
+		width: 100%;
+		padding-left: 0;
+	}
+	
+	.productInfo {
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.productImage {
+		width: 50%;
+	}
+	
+	.productDescription{
+		width: 100%;
+		align-items: center;
+	}
+	
+	.purchasing {
+		align-items: center;
+	}
+	
+}

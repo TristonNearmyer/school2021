@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+	
+	<script>
+	
+		//build arrary for fruits, vegetable, and dairy products
+		//Fruits: apples, oranges, watermelon
+		//Vegetables: brussle sprouts, asparagus, arugula
+		//Dairy: milk, yogurt, cheese
+		//build lists for fruits, vegetable, and dairy products
+		//each radio needs onclick 
+		//when fruits is selected fill dropdown with the list of fruits
+		//when vegetables is sellected fill dopdown with list of vegetables
+		//when dairy is selected fill dropdown with list of dairy 
+		//when fruits is selected remove lists of vegetable and dairy
+		//when vegetables is selected remove lists of fruits and dairy
+		//when dairy is selected rmfove lists of fruits and vegetables
+		//make reset/clear 
+		
+		var fruits = ["apples", "oranges", "watermelon"];
+		
+		var vegetables = ["brussle sprouts", "asparagus", "arugula"];
+		
+		var dairy = ["milk", "yogurt", "cheese"];
+		
+		function addFruitOptions(){
+			
+			alert("youre in addFruitOptions function");
+			
+			var getSelect = document.querySelector("select");
+			
+			var i ;
+			
+			if (document.querySelector("select").options[1]){
+				
+				var removeOpt = document.querySelector("select");
+			
+				removeOpt.removeChild(removeOpt.childNodes[3]);
+				
+				removeOpt.removeChild(removeOpt.childNodes[3]);
+				
+				removeOpt.removeChild(removeOpt.childNodes[3]);
+				
+			}
+			
+			for (i = 0; i < fruits.length; i++){
+				
+				var option = document.createElement("option");
+
+				option.text = fruits[i];
+
+				getSelect.add(option);
+			
+			}
+			
+		}
+		
+		function addVegOptions(){
+			
+			alert("youre in addVegOptions function");
+			
+			var getSelect = document.querySelector("select");
+			
+			var i ;
+			
+			if (document.querySelector("select").options[1]){
+				
+				var removeOpt = document.querySelector("select");
+			
+				removeOpt.removeChild(removeOpt.childNodes[3]);
+				
+				removeOpt.removeChild(removeOpt.childNodes[3]);
+				
+				removeOpt.removeChild(removeOpt.childNodes[3]);
+				
+			}
+			
+			for (i = 0; i < vegetables.length; i++){
+
+				var option = document.createElement("option");
+
+				option.text = vegetables[i];
+
+				getSelect.add(option);
+			
+			}
+			
+		}
+		
+		function addDairyOptions(){
+			
+			alert("youre in addDairyOptions function");
+			
+			var getSelect = document.querySelector("select");
+			
+			var i;
+			
+			if (document.querySelector("select").options[1]){
+				
+				var removeOpt = document.querySelector("select");
+			
+				removeOpt.removeChild(removeOpt.childNodes[3]);
+				
+				removeOpt.removeChild(removeOpt.childNodes[3]);
+				
+				removeOpt.removeChild(removeOpt.childNodes[3]);
+				
+			}
+			
+		/*	 */
+			
+			for (i = 0; i < dairy.length; i++){
+			
+				var option = document.createElement("option");
+
+				option.text = dairy[i];
+
+				getSelect.add(option);
+			
+			}
+			
+		}
+		
+		function resetProducts(){
+			
+			
+			if (document.querySelector("select").options[1]){
+				
+				var removeOpt = document.querySelector("select");
+			
+				removeOpt.removeChild(removeOpt.childNodes[3]);
+				
+				removeOpt.removeChild(removeOpt.childNodes[3]);
+				
+				removeOpt.removeChild(removeOpt.childNodes[3]);
+				
+			}
+			
+		}
+		
+		function assignEvents(){
+			document.querySelector("#fruits").addEventListener("click", addFruitOptions);
+			document.querySelector("#vegetables").addEventListener("click", addVegOptions)
+			document.querySelector("#dairy").addEventListener("click", addDairyOptions)
+			document.querySelector("button").addEventListener("click", resetProducts)
+		}
+	
+	</script>
+	
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body onLoad="assignEvents()">
+	
+	<p>
+	
+	  <label>
+		  <input type="radio" name="products" value="fruits" id="fruits">
+		  Fruits</label>
+		<br>
+		<label>
+		  <input type="radio" name="products" value="vegetables" id="vegetables">
+		  Vegetables</label>
+		<br>
+		<label>
+		  <input type="radio" name="products" value="dairy" id="dairy">
+		  Dairy</label>
+		<br>
+		
+    </p>
+	
+	<p>
+	
+		<select name="productsLists">
+		
+			<option value="">Choose a product</option>
+		
+	  </select>
+	
+</p>
+	
+	<p>
+	
+		<button>Reset</button>
+		
+	</p>
+	
+</body>
+</html>

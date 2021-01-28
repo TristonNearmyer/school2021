@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	
+	<script>
+	
+		let jsJavaBook = {
+			
+			ISBN : "0-596-00016-2",
+			title : "Jav and XML",
+			price : 39.95,
+			publisher: "O'Reilly & Associates",
+			authors : [author1 = {
+					   	firstName : "brett",
+						lastName : "McLaughlin",
+						price : 22.00,
+					   }],
+			copyright : 2000,
+			comments : "update required",
+			
+		};
+		
+		let jsVBbook = {
+			
+			ISBN : "1-861003-32-3",
+			title : "Professional Visual Basic 6 XML",
+			price : 49.99,
+			publisher: "Wrox Press",
+			authors : [author1 = {
+				
+					   	firstName : "James",
+						lastName : "Britt",
+				
+					   },
+					  
+					   authour2 = {
+					   
+					   	firstName : "Tuen",
+					   	lastName : "Duynstee",
+					   
+					   }
+					  
+					  ],
+			
+			copyright : 2000,
+			comments : "Outdated text. Switch to C#",
+			
+		};
+		
+		let jsBooks = {
+			
+			jsJavaBook : jsJavaBook ,
+			jsVBbook : jsVBbook , 
+			
+		};
+		
+		function displayObjects(){
+			console.log(jsJavaBook);
+			console.log(jsVBbook);
+			console.log(jsBooks);
+		};
+		
+		displayObjects();
+	
+	</script>
+	
+<meta charset="utf-8">
+<title>Javascript Object</title>
+</head>
+
+<body>
+	
+	<h1>WDV321 Advanced Javascript</h1>
+	
+	<h2>Unit4: Javascript objects</h2>
+	
+</body>
+</html>

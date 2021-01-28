@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV321 Advanced Javascript - JSON</title>
+<script src="createJSONArray.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+<script>
+let JSONObject = localStorage.getItem("Student Info");
+let parsedObject = JSON.parse(JSONObject);
+
+//alert(parsedObject[0].student_gpa);
+//alert(parsedObject[1].student_gpa);
+//alert(parsedObject[2].student_gpa);
+
+
+function pageLoad() {
+  document.getElementById("id1").innerHTML = parsedObject[0].student_id;
+  document.getElementById("gpa1").innerHTML = parsedObject[0].student_gpa;
+
+  //for (x=0; x < parseInt(parsedObject[0].student_courses.length); x++) {
+  //  document.getElementById("courses1").innerHTML = document.getElementById("courses1").innerHTML + "<li>" + parsedObject[0].student_courses[x] + "</li>";
+
+  //}
+
+  document.getElementById("id2").innerHTML = parsedObject[1].student_id;
+  document.getElementById("gpa2").innerHTML = parsedObject[1].student_gpa;
+
+//  for (x=0; x < parseInt(parsedObject[1].student_courses.length); x++) {
+//    document.getElementById("courses2").innerHTML = document.getElementById("courses2").innerHTML + "<li>" + parsedObject[1].student_courses[x] + "</li>";
+
+//  }
+
+  document.getElementById("id3").innerHTML = parsedObject[2].student_id;
+  document.getElementById("gpa3").innerHTML = parsedObject[2].student_gpa;
+
+//  for (x=0; x < parseInt(parsedObject[2].student_courses.length); x++) {
+//    document.getElementById("courses3").innerHTML = document.getElementById("courses3").innerHTML + "<li>" + parsedObject[2].student_courses[x] + "</li>";
+
+//}
+
+  for(x=0; x < parseInt(parsedObject.length); x++) {
+    for(i=0; i < parseInt(parsedObject[x].student_courses.length); i++) {
+      document.getElementById("courses" + (x+1)).innerHTML = document.getElementById("courses" + (x+1)).innerHTML + "<li>" + parsedObject[x].student_courses[i] + "</li>";
+    }
+  }
+
+
+}
+
+</script>
+
+<!--
+
+    Instructions:
+    	1. Incorporate the createJSONArray.js file into this page as an external javascript file.
+        2. Access the JSON object in local storage and convert it into a javascript object.
+        3. Use the information in the object to complete a student card for EACH student object.
+        4. Account for the fact that there could be a random number of student objects.
+        5. Use Jquery commands whenever possible.
+-->
+
+<style>
+	.studentCard	{
+		width:200px;
+		box-sizing:border-box;
+		background-color:lightblue;
+		padding-left:5px;
+		padding-top:3px;
+		border:thin solid blue;
+		box-shadow: 2px 2px 2px grey;
+	}
+
+	.studentCard h3	{
+		margin:0px;
+	}
+</style>
+
+
+
+</head>
+
+<body onload="pageLoad()">
+	<h1>WDV321 Advanced Javascript</h1>
+    <h2>Unit-8 JSON Objects</h2>
+    <h3>Creating and consuming a JSON object</h3>
+
+<div class="studentCard">
+	<h3>Student ID:<span id="id1"></span></h3>
+    <p>Student GPA:<span id="gpa1"></span></p>
+	<p>Student Courses:
+    	<ul id = "courses1">
+			<!-- display the courses as list items -->
+    	</ul>
+    </p>
+
+</div>
+
+<div class="studentCard">
+	<h3>Student ID:<span id="id2"></span></h3>
+    <p>Student GPA:<span id="gpa2"></span></p>
+	<p>Student Courses:
+    	<ul id = "courses2">
+			<!-- display the courses as list items -->
+    	</ul>
+    </p>
+
+</div>
+
+<div class="studentCard">
+	<h3>Student ID:<span id="id3"></span></h3>
+    <p>Student GPA:<span id="gpa3"></span></p>
+	<p>Student Courses:
+    	<ul id = "courses3">
+			<!-- display the courses as list items -->
+    	</ul>
+    </p>
+
+</div>
+
+
+</body>
+</html>
