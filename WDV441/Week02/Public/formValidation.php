@@ -5,6 +5,8 @@
 <title>Validate Forms</title>
 	<?php
 	
+	require("../Inc/Emailer.php");
+	
 		$firstName = "";
 		$lastName = "";
 		$dateOfBirth = "";
@@ -75,9 +77,14 @@
 				
 				$dateOfBirthErrMessage = "";
 				
+				if (false === strtotime($inDate)) { 
+					return false;
+				} 
+				list($year, $month, $day) = explode('-', $inDate); 
 				
-				
-				//$inDate = explode("/",$inDate);
+				return checkdate($month, $day, $year);
+
+				/*$inDate = explode("/",$inDate);
 				
 				echo("<script>console.log($inDate);</script>");
 				
@@ -90,7 +97,7 @@
 				}
 				else{
 					$dateOfBirthErrMessage = "please enter valid date";
-				}
+				}*/
 			}
 			
 			function validateUserEmail($inEmail){
@@ -131,11 +138,32 @@
 			validateFirstName($firstName);
 			validateLastName($lastName);
 			validateUserEmail($userEmail);
-			validateDateOfBirth($dateOfBirth);
+			if (validateDateOfBirth($dateOfBirth)){
+				
+			}else{
+				$validForm = false;
+				$dateOfBirthErrMessage = "please select a valid date";
+			};
 			
 			if($validForm){
 				
 				echo("<script>alert('the form has been submitted');</script>");
+				
+				$emailTest = new Emailer(); 
+	
+				$emailTest->setSenderEmail("gbgrandberg@dmacc.edu");
+
+				$emailTest->setRecipientEmail($userEmail);
+
+				$emailTest->setCustomerInfo($userEmail, $firstName, $lastName);
+
+				$emailTest->setSubject("week 2 homework");
+
+				$emailTest->setMessage($firstName, $lastName, $dateOfBirth, $userEmail, $userMessage);
+
+
+
+				$emailTest->sendEmail();
 				
 			}else{
 				echo("<script>alert('an error has occured, please try again');</script>");
@@ -151,19 +179,19 @@
 	<div class="form">
 		<form method="post" id="form">
 		
-			<label for="firstName">Enter first name:</label>	
+			<label for="firstName">Enter first name: <?php echo($firstNameErrMessage); ?></label>	
 			<input type="text" id="firstName" name="firstName"><br>
 
-			<label for="lastName">Enter last name:</label>
+			<label for="lastName">Enter last name:<?php echo($lastNameErrMessage); ?></label>
 			<input type="text" id="lastName" name="lastName"><br>
 
-			<label for="dateOfBirth">Enter your date of birth:</label>
-			<input type="date" id="dateOfBirth" name="dateOfBirth"><br>
+			<label for="dateOfBirth">Enter your date of birth:<?php echo($dateOfBirthErrMessage); ?></label>
+			<input type="date" id="dateOfBirth" name="dateOfBirth" min="1921-01-01" max="2021-02-04"><br>
 
-			<label for="userEmail">Enter your Email:</label>
+			<label for="userEmail">Enter your Email:<?php echo($userEmailErrMessage); ?></label>
 			<input type="email" id="userEmail" name="userEmail"><br>
 
-			<label for="userMessage">Message:</label>
+			<label for="userMessage">Message:<?php echo($userMessageErrMessage); ?></label>
 			<textarea id="userMessage" name="userMessage"></textarea><br>
 
 			<input type="submit" id="submitForm" name="submitForm" value="Submit">
