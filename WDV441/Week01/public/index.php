@@ -37,7 +37,7 @@
 	<style>
 		
 		body {
-			background-image: linear-gradient(darkblue,blue);
+			background-image: linear-gradient(darkblue,lightblue);
 			background-repeat: no-repeat;
 			background-size: cover;
 			display: flex;
