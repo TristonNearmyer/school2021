@@ -18,13 +18,14 @@ class Base {
 
     function __construct() {
         // create a connection to our database
-        $this->db = new PDO('mysql:host=localhost;dbname=wdv441_2021;charset=utf8', 
-            'wdv441_user', 'wdv441_2021');       
+        $this->db = new PDO('mysql:host=localhost;dbname=wdv441;charset=utf8', 
+            'wdv441_user', 'tN42238665!');       
     }
     
 	// store the passed array of information into our internal array
     function set($dataArray) {
         if (!is_array($this->data) || count($this->data) == 0) {
+			
             $this->data = $dataArray;
         } else {        
 			// for each key in the array set the value to our internal data
@@ -38,6 +39,14 @@ class Base {
     
     function sanitize($dataArray) {
         // sanitize data based on rules
+		
+		$this->data = $dataArray;
+		
+		filter_var($this->data['username'],FILTER_SANITIZE_SPECIAL_CHARS);
+		
+		filter_var($this->data['password'],FILTER_SANITIZE_SPECIAL_CHARS);
+		
+		$dataArray = $this->data;
         
         return $dataArray;
     }
@@ -50,9 +59,11 @@ class Base {
             $this->tableName . " WHERE " . $this->keyField . " = ?");
         
         $stmt->execute(array($id));
+		
 
         if ($stmt->rowCount() == 1) {
             $dataArray = $stmt->fetch(PDO::FETCH_ASSOC);
+			
             //var_dump($dataArray);
             $this->set($dataArray);
             
@@ -69,6 +80,8 @@ class Base {
         // determine if insert or update based on articleID
         // save data from data property to database
         if (empty($this->data[$this->keyField])) {
+			
+			
             $sql = "INSERT INTO " . $this->tableName . " 
                     (" . implode(', ', $this->columnNames) . ") 
                  VALUES (";
@@ -157,6 +170,12 @@ class Base {
         }
                 
         return $dataList;        
+    }
+	
+	function saveImage($fileArray) {
+		
+        move_uploaded_file($fileArray['tmp_name'], dirname(__FILE__) . 
+                "/../public/images/" . $this->data['username'] . "_photo.jpg");
     }
 }
 ?>

@@ -1,6 +1,11 @@
 <?php
 // usage: http://localhost:8080/WDV441_2019/week05/public_html/user-edit.php?userID=1
 // usage new: http://localhost:8080/WDV441_2019/week05/public_html/user-edit.php
+
+session_cache_limiter('none');			//This prevents a Chrome error when using the back button to return to this page
+
+session_start();
+
 require_once('../inc/Users.class.php');
 
 // if cancel is pushed, go back to list
@@ -20,8 +25,10 @@ $userErrorsArray = array();
 if (isset($_REQUEST['userId']) && $_REQUEST['userId'] > 0) 
 {
     $user->load($_REQUEST['userId']);
+
     // set our article array to our local variable
-    $dataArray = $user->userData;
+    $dataArray = $user->data;
+
 }
 
 // apply the data if we have new data
@@ -29,6 +36,7 @@ if (isset($_POST['Save']))
 {
     // set the post array to our local variable
     $dataArray = $_POST;
+	
     // sanitize
     $dataArray = $user->sanitize($dataArray);
     // pass the array into our instance
@@ -40,6 +48,8 @@ if (isset($_POST['Save']))
         // save
         if ($user->save())
         {
+			$user->saveImage($_FILES['userPhoto']);
+			
             header("location: user-save-success.php");
             exit;
         }

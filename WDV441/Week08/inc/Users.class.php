@@ -295,12 +295,12 @@ class Users extends Base {
     // table name this class works with
     var $tableName = "users";
     // keyfield of the table
-    var $keyField = "userId";
+    var $keyField = "user_id";
     // column names minus the keyword in the table
     var $columnNames = array(
         "username",
         "password",
-        "userlevel"
+        "user_level"
     );
     
     function validate() {
@@ -314,7 +314,22 @@ class Users extends Base {
                 // if not valid, set an error and flag as not valid
                 $this->errors['username'] = "Please enter a username";
                 $isValid = false;
-            }                                    
+            }    
+			
+			if (empty($this->data['password'])){
+				
+				$this->errors['password'] = "please enter a password";
+				$isValid = false;
+					
+			}
+			
+			
+			if (empty($_FILES['userPhoto']['name'])){
+				
+				$this->errors['photo'] = "please provide a photo";
+				$isValid = false;
+				
+			}
             
             // if new record, make sure we have a password            
             if (!isset($this->data[$this->keyField]) || $this->data[$this->keyField] == 0) {
@@ -338,7 +353,7 @@ class Users extends Base {
         
         parent::set($dataArray);
         
-        var_dump($this->data);
+       // var_dump($this->data);
         //die;        
     }   
     
@@ -352,10 +367,10 @@ class Users extends Base {
     function userLogin($username, $password) {
         $userID = null;
         
-        $password = $this->hashPassword($password);
+       // $password = $this->hashPassword($password);
         
         // build the SQL to check for the user
-        $userCheckSQL = "SELECT userID FROM " . $this->tableName . 
+        $userCheckSQL = "SELECT user_id, user_level FROM " . $this->tableName . 
             " WHERE username = ? AND password = ?";
         
         $stmt = $this->db->prepare($userCheckSQL);
@@ -368,7 +383,27 @@ class Users extends Base {
         {
             // if we did load the article, fetch the data as a keyed array
             $dataArray = $stmt->fetch(PDO::FETCH_ASSOC);
-            $userID = $dataArray['userID'];
+            $userID = $dataArray['user_id'];
+			$userLevel = $dataArray['user_level'];
+			
+			if ($userLevel === "3"){
+				
+				$_SESSION["loggedIn"] = "Admin";
+	
+			} 
+			
+			if ($userLevel === "2"){
+				
+				$_SESSION["loggedIn"] = "User";
+				
+			}
+			
+			if ($userLevel === "1"){
+				
+				$_SESSION["loggedIn"] = "Guest";
+				
+			}
+			
         }
         
         return $userID;

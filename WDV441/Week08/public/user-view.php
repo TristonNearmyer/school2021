@@ -10,7 +10,7 @@ $userDataArray = array();
 if (isset($_REQUEST['userId']) && $_REQUEST['userId'] > 0) 
 {
     $user->load($_REQUEST['userId']);
-    $userDataArray = $user->userData;
+    $userDataArray = $user->data;
 }
 
 // display the view
