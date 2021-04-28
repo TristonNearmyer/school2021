@@ -322,6 +322,9 @@ class Users extends Base {
 				$isValid = false;
 					
 			}
+			
+			
+			
             
             // if new record, make sure we have a password            
             if (!isset($this->data[$this->keyField]) || $this->data[$this->keyField] == 0) {

@@ -22,10 +22,12 @@ if (isset($_POST['logIn'])){
 	$logInDataArray = $logIn->sanitize($_POST);
 	
 	$logIn->set($logInDataArray);
-		
+	
 	if ($logIn->validate()){
 		
 		$logInInfo = $logIn->data;
+		
+		
 		
 		if ($logIn->userLogin($logInInfo['username'],$logInInfo['password'])) {
 			
