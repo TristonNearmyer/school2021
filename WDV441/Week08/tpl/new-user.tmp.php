@@ -1,34 +1,5 @@
 <html>
-	
-	<style>
-	
-		.redirect{
-			display: none;
-		}
-		
-		<?php 
-					
-				if (!isset($_SESSION["loggedIn"]) || !$_SESSION["loggedIn"] === "Admin"){ ?>
-
-					.redirect{
-						display: block;
-					}
-
-					form {
-						display: none;
-					}
-		<?php 
-																					  
-				}
-		
-		?>
-	
-	</style>
-	
-    <body>
-		
-		<div class="redirect"><h1>you are not allowed to edit users</h1><a href="../public/user-list.php">go back</a></div>
-		
+    <body>		
         <form action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="post" enctype="multipart/form-data">
             <?php if (isset($userErrorsArray['username']))                 
             { ?>

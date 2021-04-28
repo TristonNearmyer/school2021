@@ -6,7 +6,7 @@
 			display: none;
 		}
 		
-		<?php if (!isset($_SESSION["loggedIn"]) || !$_SESSION["loggedIn"] === "Admin"){ ?>
+		<?php if (!isset($_SESSION["loggedIn"]) || !$_SESSION["loggedIn"] = "Admin"){ ?>
 					
 				.redirect{
 					display: block;

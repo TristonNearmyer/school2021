@@ -9,7 +9,7 @@
 
 		if (isset($_SESSION["loggedIn"])) {
 
-			if ($_SESSION["loggedIn"] === "Admin") { ?>
+			if ($_SESSION["loggedIn"] = "Admin") { ?>
 
 					.adminPrivs{
 						display: inline;
@@ -36,7 +36,7 @@
 			<h1 class="welcome">Welcome user!</h1>
 			<a class="logInLink" href="../public/user-logIn.php">Log In</a>
 			<a class="adminPrivs" href="../public/user-report.php">Create Report</a>
-			<a href="user-edit.php">Add New User</a>
+			<a href="../public/new-user.php">Add New User</a>
         </div>        
         <div>
             <!-- header info -->
