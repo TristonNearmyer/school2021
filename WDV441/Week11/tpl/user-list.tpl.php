@@ -13,7 +13,7 @@
             </div>
             <?php foreach ($userList as $userData) { ?>
                 <div style="clear:both;">
-                    <div style="float:left; border:1px solid black;"><?php echo $userData['username']; ?></div>
+                    <div style="float:left; border:1px solid black;"><?php echo $userData['faq_question']; ?></div>
                     <div style="float:left; border:1px solid black;"><?php echo $userData['userlevel']; ?></div>
                     <div style="float:left; border:1px solid black;"><a href="user-edit.php?userId=<?php echo $userData['userId']; ?>">Edit</a></div>
                     <div style="float:left; border:1px solid black;"><a href="user-view.php?userId=<?php echo $userData['userId']; ?>">View</a></div>
