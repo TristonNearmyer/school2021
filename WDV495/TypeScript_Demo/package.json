@@ -1,0 +1,16 @@
+{
+  "name": "typescript_demo",
+  "version": "1.0.0",
+  "description": "typescript_test",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "triston",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "typescript": "^4.2.4"
+  }
+}

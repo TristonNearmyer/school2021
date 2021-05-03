@@ -21,24 +21,24 @@
 
      }
     ],
-    "start_url": "https://www.tristonnearmyer.com/PWA/index.html",
+    "start_url": "https://tristonnearmyer.com/PWA/index.html",
     "background_color": "#3367D6",
     "display": "fullscreen",
-    "scope": "https://www.tristonnearmyer.com/PWA/index.html",
+    "scope": "https://tristonnearmyer.com/PWA/index.html",
     "theme_color": "#3367D6",
     "shortcuts": [
       {
         "name": "TicTacToe",
         "short_name": "TTT",
         "description": "play tic tac toe",
-        "url": "https://www.tristonnearmyer.com/PWA/index.html",
+        "url": "https://tristonnearmyer.com/PWA/index.html",
         "icons": [{ "src": "TTT_icon_192.png", "sizes": "192x192" }]
       },
       {
         "name": "TicTacToe",
         "short_name": "TTT",
         "description": "play tic tac toe",
-        "url": "https://www.tristonnearmyer.com/PWA/index.html",
+        "url": "https://tristonnearmyer.com/PWA/index.html",
         "icons": [{ "src": "TTT_icon_192.png", "sizes": "192x192" }]
       }
     ],
