@@ -1,0 +1,24 @@
+{
+  "name": "taskrunner",
+  "version": "1.0.0",
+  "description": "task runner homework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TristonNearmyer/school2021.git"
+  },
+  "author": "triston nearmyer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TristonNearmyer/school2021/issues"
+  },
+  "homepage": "https://github.com/TristonNearmyer/school2021#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0"
+  }
+}

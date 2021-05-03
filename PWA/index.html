@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="service-worker.js">
+  </script>
+
+<script src="tic.js"></script>
+
+<link rel="canonical" href="https://tristonnearmyer.com/PWA/index.html"/>
+
+<meta charset="UTF-8">
+    
+<meta name="description" content="Tic-Tac-Toe Game">
+<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="blue">
+
+<link rel="apple-touch-icon" href="TTT_icon_192">
+
+<link rel="stylesheet" type="text/css" href="tic.css">
+
+<link rel="manifest" href="manifest.json">
+
+<title>Tic-Tac-Toe</title>
+
+</head>
+
+<body>
+<div id="main">
+    <h1>TIC TAC TOE</h1>
+
+    <!-- Game Instructions -->
+    <p id="ins">Game starts by just Tap on 
+        box<br><br>First Player starts as 
+        <b>Player X</b><br>And<br>Second 
+        Player as <b>Player 0</b>
+    </p>
+
+    <br><br>
+    <!-- 3*3 grid of Boxes -->
+
+    <label for="b1">box 1</label>
+    <input type="text" id="b1" onclick= "myfunc_3(); myfunc();" readonly>
+
+    <label for="b2">box 2</label>
+    <input type="text" id="b2" onclick= "myfunc_4(); myfunc();" readonly>
+    
+    <label for="b3">box 3</label>
+    <input type="text" id="b3" onclick= "myfunc_5(); myfunc();" readonly>
+
+    <br><br>
+
+    <label for="b4">box 4</label>
+    <input type="text" id="b4" onclick= "myfunc_6(); myfunc();" readonly>
+         
+    <label for="b5">box 5</label>
+    <input type="text" id="b5" onclick= "myfunc_7(); myfunc();" readonly>
+
+    <label for="b6">box 6</label>
+    <input type="text" id="b6" onclick= "myfunc_8(); myfunc();" readonly>
+
+
+    <br><br>
+
+    <label for="b7">box 7</label>
+    <input type="text" id="b7" onclick= "myfunc_9(); myfunc();" readonly>
+
+    <label for="b8">box 8</label>
+    <input type="text" id="b8" onclick= "myfunc_10();myfunc();" readonly>
+
+    <label for="b9">box 9</label>
+    <input type="text" id="b9" onclick= "myfunc_11();myfunc();" readonly>
+
+    <!-- Grid end here  -->
+    <br><br><br>
+    <!-- Button to reset game -->
+    <button id="but" onclick="myfunc_2()">
+        RESET
+    </button>
+
+    <br><br>
+    <!-- Space to show player turn -->
+    <p id="print"></p>
+
+</div>
+</body>
+
+</html>

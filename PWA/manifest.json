@@ -1,0 +1,58 @@
+{   
+    "short_name": "TTC",
+    "name": "Tic-Tac-Toe",
+    "icons": [
+      {
+        "src": "TTT_icon_192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "TTT_icon.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+     { 
+
+      "src": "maskable_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+
+     }
+    ],
+    "start_url": "https://www.tristonnearmyer.com/PWA/index.html",
+    "background_color": "#3367D6",
+    "display": "fullscreen",
+    "scope": "https://www.tristonnearmyer.com/PWA/index.html",
+    "theme_color": "#3367D6",
+    "shortcuts": [
+      {
+        "name": "TicTacToe",
+        "short_name": "TTT",
+        "description": "play tic tac toe",
+        "url": "https://www.tristonnearmyer.com/PWA/index.html",
+        "icons": [{ "src": "TTT_icon_192.png", "sizes": "192x192" }]
+      },
+      {
+        "name": "TicTacToe",
+        "short_name": "TTT",
+        "description": "play tic tac toe",
+        "url": "https://www.tristonnearmyer.com/PWA/index.html",
+        "icons": [{ "src": "TTT_icon_192.png", "sizes": "192x192" }]
+      }
+    ],
+    "description": "Tic Tac Toe Game",
+    "screenshots": [
+      {
+        "src": "screenshot.PNG",
+        "type": "image/png",
+        "sizes": "540x720"
+      },
+      {
+        "src": "screenshot.PNG",
+        "type": "image/png",
+        "sizes": "540x720"
+      }
+    ]
+  }
